@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:BesoinRisson/Assets/Scenes/MainMenu.unity.meta
 guid: 97e78c3307aed73f5bb8aabc8b16e3ef
+========
+guid: 395bfbd64b5ca6e47b35cfadfb41f4f8
+>>>>>>>> origin/loic:BesoinRisson/Assets/Scenes/2Player.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
