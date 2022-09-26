@@ -12,12 +12,11 @@ public class WinZoneScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("yeet");
         if (col.Equals(_playerConcerned.GetComponent<Collider2D>())) 
         {
-            Debug.Log("sapass");
             _winnerText.text = $"{_playerConcerned.name} won!";
             _uiWinScreen.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }
