@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="38aa227d-bd43-4ae2-9984-51f23ea75b12" name="Changes" comment="" />
+    <list default="true" id="38aa227d-bd43-4ae2-9984-51f23ea75b12" name="Changes" comment="Commit for merge" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,7 +10,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="pierre" />
+        <entry key="$PROJECT_DIR$/.." value="lucas" />
       </map>
     </option>
   </component>
@@ -73,7 +73,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664200782394</updated>
-      <workItem from="1664200791489" duration="1501000" />
+      <workItem from="1664200791489" duration="1194000" />
     </task>
     <task id="LOCAL-00001" summary="Commit for merge">
       <created>1664202151063</created>
