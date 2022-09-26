@@ -9,11 +9,12 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(IInputProvider))]
-public class PlatformMovement : MonoBehaviour
+public class PlayerMovement1 : MonoBehaviour
 {
     private Rigidbody2D _rigidbody;
     private IInputProvider _inputProvider;
     private ICheck _groundCheck;
+    private bool _isHolding;
 
     [Header("Movement Config")] [SerializeField]
     private float walkspeed;
@@ -21,6 +22,7 @@ public class PlatformMovement : MonoBehaviour
     [SerializeField] private float jumpForce;
    
     [SerializeField] [NotNull] private GameObject groundCheckObject;
+    [SerializeField] private GameObject sword;
 
 
     private void Start()
@@ -41,6 +43,15 @@ public class PlatformMovement : MonoBehaviour
     {
         var inputX = _inputProvider.GetAxis(Axis.X);
         _rigidbody.SetVelocity(Axis.X, inputX * walkspeed);
+
+        if (_inputProvider.GetAxis(Axis.X) < 0)
+        {
+            _rigidbody.transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else if(_inputProvider.GetAxis(Axis.X) > 0)
+        {
+            _rigidbody.transform.localScale = new Vector3(1, 1, 1);
+        }
     }
 
     private void ApplyJump()
@@ -48,6 +59,14 @@ public class PlatformMovement : MonoBehaviour
         if( IsGrounded() && _inputProvider.GetActionPressed(InputAction.Jump))
         {
             _rigidbody.SetVelocity(Axis.Y, jumpForce);
+        }
+    }
+
+    private void ApplyThrowSword()
+    {
+        if (_inputProvider.GetActionPressed(InputAction.Throw))
+        {
+            //sword.GetComponent<Rigidbody2D>().AddForce();
         }
     }
 

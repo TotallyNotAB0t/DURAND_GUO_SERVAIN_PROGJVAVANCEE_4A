@@ -9,7 +9,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(IInputProvider))]
-public class PlatformMovement1 : MonoBehaviour
+public class PlayerMovement2 : MonoBehaviour
 {
     private Rigidbody2D _rigidbody;
     private IInputProvider _inputProvider;
@@ -41,8 +41,16 @@ public class PlatformMovement1 : MonoBehaviour
     {
         var inputX = _inputProvider.GetAxis(Axis.X);
         _rigidbody.SetVelocity(Axis.X, inputX * walkspeed);
-    }
 
+        if (_inputProvider.GetAxis(Axis.X) < 0)
+        {
+            _rigidbody.transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else if(_inputProvider.GetAxis(Axis.X) > 0)
+        {
+            _rigidbody.transform.localScale = new Vector3(1, 1, 1);
+        }
+    }
     private void ApplyJump()
     {
         if( IsGrounded() && _inputProvider.GetActionPressed(InputAction.Jump1))
