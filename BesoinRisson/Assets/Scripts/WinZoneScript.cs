@@ -8,6 +8,7 @@ public class WinZoneScript : MonoBehaviour
     [SerializeField] private GameObject _playerConcerned;
     [SerializeField] private GameObject _uiWinScreen;
    
+    /*
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("boop");
@@ -16,5 +17,10 @@ public class WinZoneScript : MonoBehaviour
             Debug.Log("sapass");
             _uiWinScreen.SetActive(true);
         }
+    }*/
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        Debug.Log("yeet");
     }
 }
