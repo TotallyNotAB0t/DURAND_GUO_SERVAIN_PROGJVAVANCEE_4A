@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="14ea0975-123b-4899-800e-21b1166deb3b" name="Changes" comment="ok">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.BesoinRisson/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.BesoinRisson/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_09_2022_16_05_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.BesoinRisson/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_09_2022_16_05__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.BesoinRisson/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_09_2022_16_13_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.BesoinRisson/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_09_2022_16_13_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.BesoinRisson/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_09_2022_16_13__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.BesoinRisson/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_09_2022_16_13__Changes_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.BesoinRisson/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="loic" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://D:/Cours 2022-2023/Prog JV/Unity/DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A/BesoinRisson/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Cours 2022-2023/Prog JV/Unity/DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A/BesoinRisson/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Cours 2022-2023/Prog JV/Unity/DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A/BesoinRisson/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="TaskManager">
+    <task id="LOCAL-00001" summary="ok">
+      <created>1664202111042</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1664202111042</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="ok" />
+  </component>
+</project>
