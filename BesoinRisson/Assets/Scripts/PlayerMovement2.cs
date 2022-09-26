@@ -19,7 +19,8 @@ public class PlayerMovement2 : MonoBehaviour
     private float walkspeed;
 
     [SerializeField] private float jumpForce;
-   
+    [SerializeField] private GameObject sword;
+
     [SerializeField] [NotNull] private GameObject groundCheckObject;
 
 
@@ -57,6 +58,11 @@ public class PlayerMovement2 : MonoBehaviour
         {
             _rigidbody.SetVelocity(Axis.Y, jumpForce);
         }
+    }
+
+    private void ApplyStab()
+    {
+        
     }
 
     private bool IsGrounded()
