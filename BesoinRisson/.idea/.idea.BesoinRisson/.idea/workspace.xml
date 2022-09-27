@@ -2,28 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14ac433e-b43b-421e-a45f-5e07744517d8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.BesoinRisson/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/2Player.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MenuScripts.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MenuScripts.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/test.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/test.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BesoinRisson/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BesoinRisson/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Mainaudio.mixer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Mainaudio.mixer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SettingsController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SettingsController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/BurstAotSettings_StandaloneWindows.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/CommonBurstAotSettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BesoinRisson/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BesoinRisson/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/2Player.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/tryout.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/tryout.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,16 +20,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///home/pierre/Documents/DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A/BesoinRisson/Assets/Scenes/2Player.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/pierre/Documents/DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A/BesoinRisson/Assets/Scenes/2Player.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuScripts.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/pierre/Documents/DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A/BesoinRisson/Assets/Scripts/PlatformMovement.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/pierre/Documents/DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A/BesoinRisson/Assets/Scripts/PlatformMovement.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/pierre/Documents/DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A/BesoinRisson/Assets/Scripts/PlayerInputs.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/pierre/Documents/DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A/BesoinRisson/Assets/Scripts/PlayerMovement1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/pierre/Documents/DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A/BesoinRisson/Assets/Scripts/PlayerMovement1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/pierre/Documents/DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A/BesoinRisson/Assets/Scripts/PlayerMovement1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovement2.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/InputModules/BaseInput.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -65,6 +46,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../unibuilds/besoinrisson\BesoinRisson.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Pocky\Documents\create\unibuilds\besoinrisson" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.10f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\Pocky\Documents\create\DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A\BesoinRisson -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
@@ -103,7 +92,8 @@
       <option name="presentableId" value="Default" />
       <updated>1664201508757</updated>
       <workItem from="1664201531449" duration="3281000" />
-      <workItem from="1664265663269" duration="8907000" />
+      <workItem from="1664265663269" duration="9582000" />
+      <workItem from="1664283797491" duration="6754000" />
     </task>
     <servers />
   </component>
