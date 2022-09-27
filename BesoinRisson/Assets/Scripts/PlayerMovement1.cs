@@ -1,3 +1,4 @@
+using System.Collections;
 using Enums;
 using Extensions;
 using Interfaces;
@@ -20,11 +21,13 @@ public class PlayerMovement1 : MonoBehaviour
     [Header("Movement Config")] [SerializeField]
     private float walkspeed;
 
+    [SerializeField] private Respawn _respawn;
+
     [SerializeField] private float jumpForce;
     [SerializeField] private Animator swordAnimator;
     [SerializeField] [NotNull] private GameObject groundCheckObject;
     [SerializeField] private GameObject sword;
-
+    [SerializeField] private GameObject Adversary;
 
     private void Start()
     {
