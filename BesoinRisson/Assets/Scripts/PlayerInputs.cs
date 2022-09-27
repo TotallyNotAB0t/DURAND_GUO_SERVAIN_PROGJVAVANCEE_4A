@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Enums;
 using Interfaces;
@@ -33,6 +32,11 @@ namespace Behaviour.InputSystems
 
         private void CaptureInput()
         {
+            if (Input.GetButton(ThrowButton))
+            {
+                _requestedActions.Add(InputAction.Throw);
+            }
+            
             if (Input.GetButtonDown(upButton))
             {
                 _requestedActions.Add(InputAction.Up);

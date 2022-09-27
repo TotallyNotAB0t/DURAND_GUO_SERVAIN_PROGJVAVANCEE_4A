@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Enums;
 using Extensions;
 using Interfaces;
@@ -15,12 +12,15 @@ public class PlayerMovement1 : MonoBehaviour
     private IInputProvider _inputProvider;
     private ICheck _groundCheck;
     private bool _isHolding;
+    private Rigidbody2D _swordBody;
+    private bool _facingRight = true;
+    
 
     [Header("Movement Config")] [SerializeField]
     private float walkspeed;
 
     [SerializeField] private float jumpForce;
-   
+    [SerializeField] private Animator swordAnimator;
     [SerializeField] [NotNull] private GameObject groundCheckObject;
     [SerializeField] private GameObject sword;
 
@@ -30,6 +30,7 @@ public class PlayerMovement1 : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _inputProvider = GetComponent<IInputProvider>();
         _groundCheck = groundCheckObject.GetComponent<ICheck>();
+        _swordBody = sword.GetComponent<Rigidbody2D>();
     }
 
     //for engine and movement
@@ -37,6 +38,7 @@ public class PlayerMovement1 : MonoBehaviour
     {
         ApplyHorizontalMovement();
         ApplyJump();
+        ApplyThrowSword();
     }
 
     private void ApplyHorizontalMovement()
@@ -44,13 +46,15 @@ public class PlayerMovement1 : MonoBehaviour
         var inputX = _inputProvider.GetAxis(Axis.X);
         _rigidbody.SetVelocity(Axis.X, inputX * walkspeed);
 
-        if (_inputProvider.GetAxis(Axis.X) < 0)
+        if (_inputProvider.GetAxis(Axis.X) < 0 && _facingRight)
         {
-            _rigidbody.transform.localScale = new Vector3(-1, 1, 1);
+            _rigidbody.transform.Rotate(0, -180, 0);
+            _facingRight = false;
         }
-        else if(_inputProvider.GetAxis(Axis.X) > 0)
+        else if(_inputProvider.GetAxis(Axis.X) > 0 && !_facingRight)
         {
-            _rigidbody.transform.localScale = new Vector3(1, 1, 1);
+            _rigidbody.transform.Rotate(0, -180, 0);
+            _facingRight = true;
         }
     }
 
@@ -66,7 +70,9 @@ public class PlayerMovement1 : MonoBehaviour
     {
         if (_inputProvider.GetActionPressed(InputAction.Throw))
         {
-            //sword.GetComponent<Rigidbody2D>().AddForce();
+            _swordBody.transform.SetParent(null);
+            _swordBody.bodyType = RigidbodyType2D.Dynamic;
+            _swordBody.AddForce(transform.forward * 10, ForceMode2D.Impulse);
         }
     }
 
