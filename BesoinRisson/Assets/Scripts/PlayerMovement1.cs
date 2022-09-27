@@ -14,6 +14,7 @@ public class PlayerMovement1 : MonoBehaviour
     private bool _isHolding;
     private Rigidbody2D _swordBody;
     private bool _facingRight = true;
+    private bool _hasSword = true;
     
 
     [Header("Movement Config")] [SerializeField]
@@ -66,13 +67,23 @@ public class PlayerMovement1 : MonoBehaviour
         }
     }
 
+    private void ApplyAnimation()
+    {
+        if (_inputProvider.GetActionPressed(InputAction.Stab))
+        {
+            
+        }
+        swordAnimator.Play("Sword1Attack");
+    }
+
     private void ApplyThrowSword()
     {
-        if (_inputProvider.GetActionPressed(InputAction.Throw))
+        if (_inputProvider.GetActionPressed(InputAction.Throw) && _hasSword)
         {
-            _swordBody.transform.SetParent(null);
+            Debug.Log("aaaaaa");
             _swordBody.bodyType = RigidbodyType2D.Dynamic;
-            _swordBody.AddForce(transform.forward * 10, ForceMode2D.Impulse);
+            _swordBody.AddForce(transform.forward *10 , ForceMode2D.Impulse);
+            _hasSword = false;
         }
     }
 

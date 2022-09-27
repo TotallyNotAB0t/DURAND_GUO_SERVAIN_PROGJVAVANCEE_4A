@@ -32,7 +32,7 @@ namespace Behaviour.InputSystems
 
         private void CaptureInput()
         {
-            if (Input.GetButton(ThrowButton))
+            if (Input.GetButtonDown(ThrowButton))
             {
                 _requestedActions.Add(InputAction.Throw);
             }
