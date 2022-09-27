@@ -467,7 +467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkspeed: 10
   jumpForce: 5
-  swordAnimator: {fileID: 0}
+  swordAnimator: {fileID: 1576084194}
   groundCheckObject: {fileID: 422374307}
   sword: {fileID: 1576084190}
 --- !u!114 &422374314
@@ -699,7 +699,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1628632975}
   m_Layer: 0
-  m_Name: Script
+  m_Name: Scripts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
