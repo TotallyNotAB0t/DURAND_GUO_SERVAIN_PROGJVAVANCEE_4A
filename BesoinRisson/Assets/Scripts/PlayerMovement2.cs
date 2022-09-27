@@ -16,7 +16,7 @@ public class PlayerMovement2 : MonoBehaviour
     private float walkspeed;
 
     [SerializeField] private Respawn _respawn;
-
+    [SerializeField] private PlayerMovement1 _player1State;
     [SerializeField] private float jumpForce;
     [SerializeField] private GameObject sword;
 
@@ -59,12 +59,7 @@ public class PlayerMovement2 : MonoBehaviour
             _rigidbody.SetVelocity(Axis.Y, jumpForce);
         }
     }
-
-    private void ApplyStab()
-    {
-        
-    }
-
+    
     private bool IsGrounded()
     {
         return _groundCheck.Check();
@@ -72,7 +67,7 @@ public class PlayerMovement2 : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("Sword"))
+        if (col.gameObject.CompareTag("Sword") && !_player1State.IsBlocking && !_player1State.IsSwordDown)
         {
             gameObject.SetActive(false);
         }

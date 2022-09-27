@@ -12,6 +12,7 @@ namespace Behaviour.InputSystems
         private const string JumpButton = "Jump";
         private const string StabButton = "Stab";
         private const string ThrowButton = "Throw";
+        private const string BlockButton = "Block";
         
         private HashSet<InputAction> _requestedActions = new HashSet<InputAction>();
 
@@ -32,6 +33,15 @@ namespace Behaviour.InputSystems
 
         private void CaptureInput()
         {
+            if (Input.GetButtonDown(BlockButton))
+            {
+                _requestedActions.Add(InputAction.Block);
+            }
+            if (Input.GetButtonUp(BlockButton))
+            {
+                _requestedActions.Remove(InputAction.Block);
+            }
+
             if (Input.GetButtonDown(upButton))
             {
                 _requestedActions.Add(InputAction.Up);

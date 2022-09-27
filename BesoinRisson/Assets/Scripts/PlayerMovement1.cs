@@ -1,3 +1,4 @@
+using System.Collections;
 using Enums;
 using Extensions;
 using Interfaces;
@@ -18,12 +19,13 @@ public class PlayerMovement1 : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private IInputProvider _inputProvider;
     private ICheck _groundCheck;
-    private bool _isHolding;
     private Rigidbody2D _swordBody;
     private bool _facingRight = true;
     private bool _hasSword = true;
     private SwordPositions _swordState = SwordPositions.Mid;
-    
+    public bool IsBlocking { get; private set; }
+    public bool IsSwordDown { get; private set; }
+
 
     [Header("Movement Config")] [SerializeField]
     private float walkspeed;
@@ -55,6 +57,8 @@ public class PlayerMovement1 : MonoBehaviour
         ApplyStab();
         //ApplyBonk();
         SwitchWeaponHeight();
+        ApplyBlock();
+        ApplyDropSword();
     }
 
     private void ApplyHorizontalMovement()
@@ -79,6 +83,19 @@ public class PlayerMovement1 : MonoBehaviour
         if( IsGrounded() && _inputProvider.GetActionPressed(InputAction.Jump))
         {
             _rigidbody.SetVelocity(Axis.Y, jumpForce);
+        }
+    }
+
+    private void ApplyBlock()
+    {
+        if (_inputProvider.GetActionPressed(InputAction.Block) && !IsBlocking)
+        {
+            IsBlocking = true;
+            swordAnimator.Play("BlockSword1");
+        } else if (!_inputProvider.GetActionPressed(InputAction.Block) && IsBlocking)
+        {
+            IsBlocking = false;
+            swordAnimator.Play("Idle");
         }
     }
 
@@ -165,6 +182,28 @@ public class PlayerMovement1 : MonoBehaviour
         }
     }
 
+    private void ApplyDropSword()
+    {
+        if (_inputProvider.GetActionPressed(InputAction.Down) && _hasSword)
+        {
+            swordAnimator.enabled = false;
+            IsSwordDown = true;
+            _hasSword = false;
+            _swordBody.transform.SetParent(null);
+            _swordBody.bodyType = RigidbodyType2D.Dynamic;
+        }
+    }
+
+    private IEnumerator ApplyGetSword()
+    {
+        swordAnimator.enabled = true;
+        IsSwordDown = false;
+        _swordBody.transform.SetParent(gameObject.transform);
+        _swordBody.bodyType = RigidbodyType2D.Kinematic;
+        yield return new WaitForSeconds(2f);
+        _hasSword = true;
+    }
+
     private bool IsGrounded()
     {
         return _groundCheck.Check();
@@ -175,6 +214,11 @@ public class PlayerMovement1 : MonoBehaviour
         if (col.gameObject.CompareTag("Sword") && col.gameObject != sword)
         {
             gameObject.SetActive(false);
+        }
+
+        if (_inputProvider.GetActionPressed(InputAction.Down) && col.gameObject.CompareTag("Sword") && !_hasSword && IsSwordDown)
+        {
+            StartCoroutine(ApplyGetSword());
         }
     }
 }

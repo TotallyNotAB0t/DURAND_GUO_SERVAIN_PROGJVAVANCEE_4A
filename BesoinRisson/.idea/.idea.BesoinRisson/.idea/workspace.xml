@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="14ac433e-b43b-421e-a45f-5e07744517d8" name="Changes" comment="">
+    <list default="true" id="14ac433e-b43b-421e-a45f-5e07744517d8" name="Changes" comment="Merge Sword into master">
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/2Player.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/2Player.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enums/InputAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enums/InputAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Weapon/SwordP1.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Weapon/SwordP1.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerInputs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerInputs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement2.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,11 +31,14 @@
     <setting file="mock:///home/pierre/Documents/DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A/BesoinRisson/Assets/Scenes/2Player.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/pierre/Documents/DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A/BesoinRisson/Assets/Scenes/2Player.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/pierre/Documents/DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A/BesoinRisson/Assets/Scenes/2Player.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/pierre/Documents/DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A/BesoinRisson/Assets/Scenes/2Player.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/pierre/Documents/DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A/BesoinRisson/Assets/Scenes/2Player.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuScripts.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///home/pierre/Documents/DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A/BesoinRisson/Assets/Scripts/PlayerMovement1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/pierre/Documents/DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A/BesoinRisson/Assets/Scripts/PlayerMovement1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/InputModules/BaseInput.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Core/Serialization/SerializableType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/pierre/Documents/DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A/BesoinRisson/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -53,6 +62,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Builds/BuildTest.x86_64" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Builds" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$USER_HOME$/Unity/Hub/Editor/2021.3.10f1/Editor/Unity" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\Pocky\Documents\create\DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A\BesoinRisson -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
@@ -94,6 +111,14 @@
       <workItem from="1664265663269" duration="8907000" />
       <workItem from="1664284536286" duration="6373000" />
     </task>
+    <task id="LOCAL-00001" summary="Merge Sword into master">
+      <created>1664305402181</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1664305402181</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,6 +137,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge Sword into master" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge Sword into master" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

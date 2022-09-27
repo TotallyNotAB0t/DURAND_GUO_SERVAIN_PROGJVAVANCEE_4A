@@ -1200,7 +1200,7 @@ MonoBehaviour:
   walkspeed: 10
   _respawn: {fileID: 1628632977}
   jumpForce: 5
-  swordAnimator: {fileID: 0}
+  swordAnimator: {fileID: 1576084195}
   swordStabAnimation: {fileID: 0}
   groundCheckObject: {fileID: 422374307}
   sword: {fileID: 1576084190}
@@ -1980,6 +1980,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6495499944031821352, guid: 738fa9e38e027b27d9a7dcf1a171d56b, type: 3}
   m_PrefabInstance: {fileID: 6495499942904675528}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1576084195
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576084190}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 49c17237485086fcba2ffab268a6cd5b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1628632974
 GameObject:
   m_ObjectHideFlags: 0
@@ -2292,6 +2312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkspeed: 10
   _respawn: {fileID: 1628632977}
+  _player1State: {fileID: 422374313}
   jumpForce: 5
   sword: {fileID: 0}
   groundCheckObject: {fileID: 1834610701}
