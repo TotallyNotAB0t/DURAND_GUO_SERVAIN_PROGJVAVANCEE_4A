@@ -1200,9 +1200,8 @@ MonoBehaviour:
   walkspeed: 10
   _respawn: {fileID: 1628632977}
   jumpForce: 5
-  swordAnimator: {fileID: 1576084194}
-  swordStabAnimation: {fileID: 0}
   swordAnimator: {fileID: 0}
+  swordStabAnimation: {fileID: 0}
   groundCheckObject: {fileID: 422374307}
   sword: {fileID: 1576084190}
   Adversary: {fileID: 1834610701}
@@ -1238,16 +1237,6 @@ MonoBehaviour:
 --- !u!4 &501294479 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6495499944031821352, guid: 738fa9e38e027b27d9a7dcf1a171d56b, type: 3}
-  m_PrefabInstance: {fileID: 783035877}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &501294479 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6495499944031821352, guid: 738fa9e38e027b27d9a7dcf1a171d56b, type: 3}
-  m_PrefabInstance: {fileID: 783035877}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &666655815 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6495499944031821334, guid: 738fa9e38e027b27d9a7dcf1a171d56b, type: 3}
   m_PrefabInstance: {fileID: 783035877}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &756923757
@@ -1363,71 +1352,6 @@ PrefabInstance:
     - target: {fileID: 6495499944031821334, guid: 738fa9e38e027b27d9a7dcf1a171d56b, type: 3}
       propertyPath: m_Name
       value: SwordP2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6495499944031821352, guid: 738fa9e38e027b27d9a7dcf1a171d56b, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6495499944031821352, guid: 738fa9e38e027b27d9a7dcf1a171d56b, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.70000005
-      objectReference: {fileID: 0}
-    - target: {fileID: 6495499944031821352, guid: 738fa9e38e027b27d9a7dcf1a171d56b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 6495499944031821352, guid: 738fa9e38e027b27d9a7dcf1a171d56b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 6495499944031821352, guid: 738fa9e38e027b27d9a7dcf1a171d56b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6495499944031821352, guid: 738fa9e38e027b27d9a7dcf1a171d56b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.8660254
-      objectReference: {fileID: 0}
-    - target: {fileID: 6495499944031821352, guid: 738fa9e38e027b27d9a7dcf1a171d56b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6495499944031821352, guid: 738fa9e38e027b27d9a7dcf1a171d56b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6495499944031821352, guid: 738fa9e38e027b27d9a7dcf1a171d56b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6495499944031821352, guid: 738fa9e38e027b27d9a7dcf1a171d56b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6495499944031821352, guid: 738fa9e38e027b27d9a7dcf1a171d56b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6495499944031821352, guid: 738fa9e38e027b27d9a7dcf1a171d56b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -60
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 738fa9e38e027b27d9a7dcf1a171d56b, type: 3}
---- !u!1001 &783035877
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1834610709}
-    m_Modifications:
-    - target: {fileID: 6495499944031821334, guid: 738fa9e38e027b27d9a7dcf1a171d56b, type: 3}
-      propertyPath: m_Name
-      value: SwordP2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6495499944031821334, guid: 738fa9e38e027b27d9a7dcf1a171d56b, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6495499944031821352, guid: 738fa9e38e027b27d9a7dcf1a171d56b, type: 3}
       propertyPath: m_RootOrder
@@ -2369,7 +2293,7 @@ MonoBehaviour:
   walkspeed: 10
   _respawn: {fileID: 1628632977}
   jumpForce: 5
-  sword: {fileID: 666655815}
+  sword: {fileID: 0}
   groundCheckObject: {fileID: 1834610701}
   Adversary: {fileID: 422374307}
 --- !u!1 &2137181606
@@ -2520,7 +2444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6495499944031821334, guid: 738fa9e38e027b27d9a7dcf1a171d56b, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Sword
       objectReference: {fileID: 0}
     - target: {fileID: 6495499944031821352, guid: 738fa9e38e027b27d9a7dcf1a171d56b, type: 3}
       propertyPath: m_RootOrder
@@ -2581,7 +2505,6 @@ PrefabInstance:
     - target: {fileID: 6495499944031821353, guid: 738fa9e38e027b27d9a7dcf1a171d56b, type: 3}
       propertyPath: m_UseFullKinematicContacts
       value: 0
-      value: -90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 738fa9e38e027b27d9a7dcf1a171d56b, type: 3}
