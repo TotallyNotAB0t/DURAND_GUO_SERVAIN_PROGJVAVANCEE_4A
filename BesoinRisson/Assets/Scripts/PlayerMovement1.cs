@@ -40,6 +40,7 @@ public class PlayerMovement1 : MonoBehaviour
         ApplyHorizontalMovement();
         ApplyJump();
         ApplyThrowSword();
+        ApplyAnimation();
     }
 
     private void ApplyHorizontalMovement()
@@ -71,9 +72,8 @@ public class PlayerMovement1 : MonoBehaviour
     {
         if (_inputProvider.GetActionPressed(InputAction.Stab))
         {
-            
+            swordAnimator.Play("Sword1Attack");
         }
-        swordAnimator.Play("Sword1Attack");
     }
 
     private void ApplyThrowSword()
@@ -81,6 +81,7 @@ public class PlayerMovement1 : MonoBehaviour
         if (_inputProvider.GetActionPressed(InputAction.Throw) && _hasSword)
         {
             Debug.Log("aaaaaa");
+            _swordBody.transform.SetParent(null);
             _swordBody.bodyType = RigidbodyType2D.Dynamic;
             _swordBody.AddForce(transform.forward *10 , ForceMode2D.Impulse);
             _hasSword = false;
