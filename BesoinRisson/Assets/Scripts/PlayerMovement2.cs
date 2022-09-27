@@ -70,4 +70,12 @@ public class PlayerMovement2 : MonoBehaviour
     {
         return _groundCheck.Check();
     }
+    
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Sword"))
+        {
+            gameObject.SetActive(false);
+        }
+    }
 }
