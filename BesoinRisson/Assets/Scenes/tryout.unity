@@ -504,7 +504,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 784681656}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.45, y: 2.09, z: 0}
+  m_LocalPosition: {x: -2.71, y: 2.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -681,6 +681,7 @@ GameObject:
   m_Component:
   - component: {fileID: 878889677}
   - component: {fileID: 878889678}
+  - component: {fileID: 878889679}
   m_Layer: 0
   m_Name: Rival
   m_TagString: Untagged
@@ -720,6 +721,27 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!50 &878889679
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878889676}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &972342309
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,7 +890,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1244509895}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: 2.7, z: 0}
+  m_LocalPosition: {x: 20, y: 2, z: 0}
   m_LocalScale: {x: 5, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -915,6 +937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerConcerned: {fileID: 784681656}
   _uiWinScreen: {fileID: 1503320085}
+  _winnerText: {fileID: 353300390}
 --- !u!1 &1320789282
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,6 +948,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1320789283}
   - component: {fileID: 1320789284}
+  - component: {fileID: 1320789285}
   m_Layer: 0
   m_Name: RivalWin
   m_TagString: Untagged
@@ -973,6 +997,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1320789285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320789282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a62283301d0d5df48805ce7eb8e5b812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerConcerned: {fileID: 878889676}
+  _uiWinScreen: {fileID: 1503320085}
+  _winnerText: {fileID: 353300390}
 --- !u!1 &1450401835
 GameObject:
   m_ObjectHideFlags: 0
