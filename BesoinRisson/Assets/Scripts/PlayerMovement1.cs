@@ -213,6 +213,7 @@ public class PlayerMovement1 : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Sword") && col.gameObject != sword)
         {
+            _respawn.RespawnPlayer(gameObject, Adversary, -6);
             gameObject.SetActive(false);
         }
 

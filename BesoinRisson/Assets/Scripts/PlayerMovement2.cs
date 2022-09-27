@@ -69,6 +69,7 @@ public class PlayerMovement2 : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Sword") && !_player1State.IsBlocking && !_player1State.IsSwordDown)
         {
+            _respawn.RespawnPlayer(gameObject, Adversary, 6);
             gameObject.SetActive(false);
         }
     }
