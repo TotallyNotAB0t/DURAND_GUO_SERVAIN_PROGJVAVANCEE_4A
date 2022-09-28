@@ -754,7 +754,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 182157686}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 414866362}
+        m_TargetAssemblyTypeName: MenuScripts, Assembly-CSharp
+        m_MethodName: GoToScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 2Player
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &182157686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1889,7 +1901,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioMixer: {fileID: 24100000, guid: 87f28db2289606c44ab3f16267397543, type: 2}
   _resolutionDropdown: {fileID: 1417466954}
-  _isFullscreen: {fileID: 162038645}
   _volumeSlider: {fileID: 1456302895}
 --- !u!1 &596072738
 GameObject:
@@ -2357,7 +2368,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 843329925}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 414866362}
+        m_TargetAssemblyTypeName: MenuScripts, Assembly-CSharp
+        m_MethodName: GoToScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Player vs AI
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &843329925
 MonoBehaviour:
   m_ObjectHideFlags: 0

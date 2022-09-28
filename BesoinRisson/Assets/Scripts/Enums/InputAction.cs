@@ -11,6 +11,8 @@ namespace Enums
         Down1,
         Jump1,
         Stab1,
-        Throw1
+        Throw1,
+        Block,
+        Block1
     }
 }
