@@ -658,12 +658,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 260832101}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
 --- !u!23 &260832101
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -898,12 +898,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 355087337}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
 --- !u!23 &355087337
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2011,6 +2011,8 @@ GameObject:
   - component: {fileID: 1628632975}
   - component: {fileID: 1628632976}
   - component: {fileID: 1628632977}
+  - component: {fileID: 1628632979}
+  - component: {fileID: 1628632978}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -2058,6 +2060,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6509537ac327fa468716e55f24d6a38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1628632978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628632974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eaeaf80fe5b49cba6d7c41c88a5c364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swordRadius: 0
+  playerRadius: 0
+  jumpForce: 20
+  jumpTime: 0
+  gravity: -9.81
+  velocity: 0
+--- !u!114 &1628632979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628632974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7503a3f3fe67430aac3ce72215ad9bb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: {fileID: 1628632978}
+  player1: {fileID: 422374307}
 --- !u!1 &1636722534
 GameObject:
   m_ObjectHideFlags: 0
@@ -2315,8 +2349,10 @@ MonoBehaviour:
   _player1State: {fileID: 422374313}
   jumpForce: 5
   sword: {fileID: 1870306026}
+  swordAnimator: {fileID: 0}
   groundCheckObject: {fileID: 1834610701}
   Adversary: {fileID: 422374307}
+  isBot: 0
 --- !u!1 &1870306026 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6495499944031821334, guid: 738fa9e38e027b27d9a7dcf1a171d56b, type: 3}

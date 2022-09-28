@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Behaviour.Utils;
+﻿using System.Collections.Generic;
 using Enums;
 using UnityEngine;
 
@@ -43,10 +41,9 @@ namespace PlayerRefacto
         [SerializeField] private float gravity = -9.81f;
         [SerializeField] private float velocity;
 
-        private Player p1;
-        private Player p2;
+        public Player p1;
+        public Player p2;
         
-
         public List<InputAction> CheckInputsPossible(Player self, Player opponent)
         {
             List<InputAction> possible = new List<InputAction>();
@@ -128,6 +125,25 @@ namespace PlayerRefacto
                     break;
                 case SwordPos.Top:
                     player.swordState = SwordPos.Mid;
+                    break;
+            }
+        }
+
+        public void applyLeftOrRight(Player player, InputAction input)
+        {
+            switch (input)
+            {
+                case InputAction.Left:
+                    p1.pos += Vector2.left;
+                    break;
+                case InputAction.Left1:
+                    p2.pos += Vector2.left;
+                    break;
+                case InputAction.Right:
+                    p1.pos += Vector2.right;
+                    break;
+                case InputAction.Right1:
+                    p2.pos += Vector2.right;
                     break;
             }
         }

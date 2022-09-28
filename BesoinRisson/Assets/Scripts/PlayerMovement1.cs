@@ -63,7 +63,15 @@ public class PlayerMovement1 : MonoBehaviour
         ApplyDropSword();
     }
 
-    private void ApplyHorizontalMovement()
+    public void NewHorizontalMovement()
+    {
+        if (_inputProvider.GetAxis(Axis.X) > 0)
+        {
+            
+        }
+    }
+
+    public void ApplyHorizontalMovement()
     {
         var inputX = _inputProvider.GetAxis(Axis.X);
         _rigidbody.SetVelocity(Axis.X, inputX * walkspeed);
@@ -82,7 +90,7 @@ public class PlayerMovement1 : MonoBehaviour
 
     private void ApplyJump()
     {
-        if( IsGrounded() && _inputProvider.GetActionPressed(InputAction.Jump))
+        if( /*IsGrounded() &&*/ _inputProvider.GetActionPressed(InputAction.Jump))
         {
             _rigidbody.SetVelocity(Axis.Y, jumpForce);
         }
@@ -206,10 +214,10 @@ public class PlayerMovement1 : MonoBehaviour
         _hasSword = true;
     }
 
-    private bool IsGrounded()
+    /*private bool IsGrounded()
     {
         return _groundCheck.Check();
-    }
+    }*/
 
     private void OnCollisionEnter2D(Collision2D col)
     {
