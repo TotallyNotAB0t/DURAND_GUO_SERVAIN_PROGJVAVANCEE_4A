@@ -20,7 +20,7 @@ namespace PlayerRefacto
         private void Start()
         {
             state = new GameState();
-            state.p1.pos = new Vector2(-3.5f, 0.75f);
+            state.p1.pos = new Vector2(-3.5f, 2f);
             state.p2.pos = new Vector2(3.5f, 0.75f);
             _inputProvider = GetComponent<PlayerInputs>();
             _inputProvider1 = GetComponent<PlayerInputs1>();
@@ -28,42 +28,47 @@ namespace PlayerRefacto
         
         private void Update()
         {
-            //Create Copy GameState for checking
+            //Create Copy GameState buffer
             GMBuffer = state;
             
-            //Left and right move
-            ReadInputLeftOrRight();
-            player1.transform.position = Vector2.MoveTowards(player1.transform.position, state.p1.pos, Time.deltaTime*5);
-            player2.transform.position = Vector2.MoveTowards(player2.transform.position, state.p2.pos, Time.deltaTime*5);
-            
-            //Gravity
-
-            MyUpdate();
-            
+            //Apply the state to the players in the scene
             player1.transform.position = state.p1.pos;
+            player2.transform.position = state.p2.pos;
+            
+            //Does the collision check and update the state
+            MyUpdate();
         }
-
+        
         public void MyUpdate()
         {
-            Debug.LogError("pos p1 : "+state.p1.pos);
-            if (!CheckGround(state.p1.pos, 0.5f, new Vector2(0, 0.5f), 1))
+            //Get Input
+            ReadInput();
+            
+            //Debug.LogError("pos p1 : "+state.p1.pos);
+            //
+            if (!CheckGround(state.p1.pos, 1f, new Vector2(0, -0.5f), 1))
             {
-                Debug.LogError("not on ground");
+                //Debug.LogError("not on ground");
                 GMBuffer.p1.pos = ApplyGravity(GMBuffer.p1.pos);
             }
-
+            
+            if (!CheckGround(state.p2.pos, 1f, new Vector2(0, -0.5f), 1))
+            {
+                GMBuffer.p2.pos = ApplyGravity(GMBuffer.p2.pos);
+            }
+            
             state.p1.pos = Vector2.MoveTowards(state.p1.pos, GMBuffer.p1.pos, 0.016f);
-            Debug.LogError("DESCEND : "+state.p1.pos);
+            //Debug.LogError("DESCEND : "+state.p1.pos);
         }
-
+        
         //Input function
-        public void ReadInputLeftOrRight()
+        public void ReadInput(InputAction action = InputAction.Up)
         {
             if (_inputProvider.GetActionPressed(InputAction.Left))
             {
                 PlayerGoLeft(true);
             }
-            if (_inputProvider1.GetActionPressed(InputAction.Left1))
+            if (_inputProvider1.GetActionPressed(InputAction.Left1) || action == InputAction.Left1)
             {
                 PlayerGoLeft(false);
             }
@@ -72,7 +77,7 @@ namespace PlayerRefacto
             {
                 PlayerGoRight(true);
             }
-            if (_inputProvider1.GetActionPressed(InputAction.Right1))
+            if (_inputProvider1.GetActionPressed(InputAction.Right1) || action == InputAction.Right1)
             {
                 PlayerGoRight(false);
             }
@@ -197,7 +202,7 @@ namespace PlayerRefacto
 
         private Vector2 ApplyGravity(Vector2 player)
         {
-            return player + Vector2.down * 9.81f;
+            return player + Vector2.down * 0.016f;
         }
     }
 }
