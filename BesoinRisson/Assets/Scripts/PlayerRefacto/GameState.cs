@@ -34,7 +34,7 @@ namespace PlayerRefacto
             public float starty;
         }
 
-        private bool isFinished;
+        //public bool isFinished;
         private float timer;
         private float swordRadius;
         private float playerRadius;

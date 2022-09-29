@@ -23,28 +23,31 @@ namespace PlayerRefacto
             state.p1.pos = new Vector2(-3.5f, 10.75f);
             state.p1.velocity = Vector2.zero;
             state.p2.pos = new Vector2(3.5f, 0.75f);
+            
+            //Dire a l'epee de suivre les joueurs
+            state.p1.swordCoord = Vector2.one;
+            state.p2.swordCoord = Vector2.one;
+            
             _inputProvider = GetComponent<PlayerInputs>();
             _inputProvider1 = GetComponent<PlayerInputs1>();
         }
         
         private void Update()
         {
-            //Create Copy GameState for checking
-            //Left and right move
-            ReadInput();
-
-            //Gravity
-
             MyUpdate(state);
             
+            //Apply gamestate to the graphic engine
             player1.transform.position = state.p1.pos;
             player2.transform.position = state.p2.pos;
         }
 
-        public void MyUpdate(GameState state)
+        public void MyUpdate(GameState objState)
         {
-            state.p1 = SimulatePhysics(state.p1);
-            state.p2 = SimulatePhysics(state.p2);
+            //Read player and bot moves
+            ReadInput();
+            objState.p1 = SimulatePhysics(objState.p1);
+            objState.p2 = SimulatePhysics(objState.p2);
+            CheckWin();
         }
 
         private GameState.Player SimulatePhysics(GameState.Player player)
@@ -67,38 +70,38 @@ namespace PlayerRefacto
         }
 
         //Input function
-        public void ReadInput()
+        public void ReadInput(InputAction action = InputAction.Up)
         {
             if (_inputProvider.GetActionPressed(InputAction.Left))
             {
-                state.p1 = applyLeft(state.p1);
+                state.p1 = ApplyLeft(state.p1);
             }
-            if (_inputProvider1.GetActionPressed(InputAction.Left1))
+            if (_inputProvider1.GetActionPressed(InputAction.Left1) || action == InputAction.Left1)
             {
-                state.p2 = applyLeft(state.p2);
+                state.p2 = ApplyLeft(state.p2);
             }
             
             if (_inputProvider.GetActionPressed(InputAction.Right))
             {
-                state.p1 = applyRight(state.p1);
+                state.p1 = ApplyRight(state.p1);
             }
-            if (_inputProvider1.GetActionPressed(InputAction.Right1))
+            if (_inputProvider1.GetActionPressed(InputAction.Right1) || action == InputAction.Right1)
             {
-                state.p2 = applyRight(state.p2);
+                state.p2 = ApplyRight(state.p2);
             }
             
             if (_inputProvider.GetActionPressed(InputAction.Jump))
             {
-                state.p1 = applyJump(state.p1);
+                state.p1 = ApplyJump(state.p1);
             }
-            if (_inputProvider1.GetActionPressed(InputAction.Jump1))
+            if (_inputProvider1.GetActionPressed(InputAction.Jump1) || action == InputAction.Jump1)
             {
-                state.p2 = applyJump(state.p2);
+                state.p2 = ApplyJump(state.p2);
             }
         }
         
         //Moving function
-        private void applyUp(GameState.Player player)
+        private void ApplyUp(GameState.Player player)
         {
             switch (player.swordState)
             {
@@ -111,7 +114,7 @@ namespace PlayerRefacto
             }
         }
 
-        private void applyDown(GameState.Player player)
+        private void ApplyDown(GameState.Player player)
         {
             switch (player.swordState)
             {
@@ -143,7 +146,7 @@ namespace PlayerRefacto
             player.swordCoord = memo;
         }*/
 
-        private GameState.Player applyJump(GameState.Player player)
+        private GameState.Player ApplyJump(GameState.Player player)
         {
             if (player.isGrounded)
             {
@@ -153,17 +156,32 @@ namespace PlayerRefacto
 
             return player;
         }
-        private GameState.Player applyLeft(GameState.Player player)
+        private GameState.Player ApplyLeft(GameState.Player player)
         {
+            if (CheckOverlap(state.p1.swordCoord, 0.25f, state.p2.swordCoord, 0.25f)) return player;
             player.velocity.x = -7;
             player.isRight = false;
+
             return player;
         }
-        private GameState.Player applyRight(GameState.Player player)
+        
+        private GameState.Player ApplyRight(GameState.Player player)
         {
+            if (CheckOverlap(state.p1.swordCoord, 0.25f, state.p2.swordCoord, 0.25f)) return player;
             player.velocity.x = 7;
             player.isRight = true;
             return player;
+        }
+
+        private void CheckWin()
+        {
+            if (state.p1.pos.x > 18)
+            {
+                state.p1.hasWon = true;
+            } else if (state.p2.pos.x < 18)
+            {
+                state.p2.hasWon = true;
+            }
         }
         
         
