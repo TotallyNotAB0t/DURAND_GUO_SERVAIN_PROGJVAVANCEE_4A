@@ -2012,7 +2012,6 @@ GameObject:
   - component: {fileID: 1628632976}
   - component: {fileID: 1628632977}
   - component: {fileID: 1628632979}
-  - component: {fileID: 1628632978}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -2060,24 +2059,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6509537ac327fa468716e55f24d6a38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1628632978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1628632974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8eaeaf80fe5b49cba6d7c41c88a5c364, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swordRadius: 0
-  playerRadius: 0
-  jumpForce: 20
-  jumpTime: 0
-  gravity: -9.81
-  velocity: 0
 --- !u!114 &1628632979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2090,8 +2071,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7503a3f3fe67430aac3ce72215ad9bb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: {fileID: 1628632978}
   player1: {fileID: 422374307}
+  player2: {fileID: 1834610701}
 --- !u!1 &1636722534
 GameObject:
   m_ObjectHideFlags: 0

@@ -53,14 +53,14 @@ public class PlayerMovement1 : MonoBehaviour
     //for engine and movement
     private void FixedUpdate()
     {
-        ApplyHorizontalMovement();
+        /*ApplyHorizontalMovement();
         ApplyJump();
         ApplyThrowSword();
         ApplyStab();
         //ApplyBonk();
         SwitchWeaponHeight();
         ApplyBlock();
-        ApplyDropSword();
+        ApplyDropSword();*/
     }
 
     public void NewHorizontalMovement()
