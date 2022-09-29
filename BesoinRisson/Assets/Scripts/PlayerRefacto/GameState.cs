@@ -20,18 +20,14 @@ namespace PlayerRefacto
             public Vector2 velocity;
             public SwordPos swordState;
             public Vector2 swordCoord;
+            public Vector2 swordVelocity;
+            public float cooldown;
             public bool isGrounded;
             public bool isRight;
             public bool isIdle;
             public bool isAttacking;
             public bool isAlive;
             public bool hasWon;
-            
-            //jumping
-            public float currentJumpSpeed;
-            public float initialJumpSpeed;
-            public float jumpStartTime;
-            public float starty;
         }
 
         private float swordRadius;
@@ -66,17 +62,6 @@ namespace PlayerRefacto
 
             return possible;
         }
-
-        public void ModifyPos(bool isP1, Vector2 newPos)
-        {
-            if (isP1)
-            {
-                p1.pos += newPos;
-            }
-            else
-            {
-                p2.pos += newPos;
-            }
-        }
+        
     }
 }

@@ -28,6 +28,11 @@ namespace Behaviour.InputSystems
             return _requestedActions.Contains(action);
         }
 
+        public void RemoveKey(InputAction key)
+        {
+            _requestedActions.Remove(key);
+        }
+
         private void Update()
         {
             CaptureInput();
