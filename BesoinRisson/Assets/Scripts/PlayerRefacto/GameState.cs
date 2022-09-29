@@ -65,5 +65,17 @@ namespace PlayerRefacto
 
             return possible;
         }
+
+        public void ModifyPos(bool isP1, Vector2 newPos)
+        {
+            if (isP1)
+            {
+                p1.pos += newPos;
+            }
+            else
+            {
+                p2.pos += newPos;
+            }
+        }
     }
 }

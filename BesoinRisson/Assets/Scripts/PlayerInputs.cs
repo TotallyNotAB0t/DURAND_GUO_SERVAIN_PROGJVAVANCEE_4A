@@ -13,7 +13,9 @@ namespace Behaviour.InputSystems
         private const string StabButton = "Stab";
         private const string ThrowButton = "Throw";
         private const string BlockButton = "Block";
-        
+        private const string LeftButton = "Left";
+        private const string RightButton = "Right";
+
         private HashSet<InputAction> _requestedActions = new HashSet<InputAction>();
 
         public float GetAxis(Axis axis)
@@ -33,6 +35,24 @@ namespace Behaviour.InputSystems
 
         private void CaptureInput()
         {
+            if (Input.GetButtonDown(LeftButton))
+            {
+                _requestedActions.Add(InputAction.Left);
+            }
+            if (Input.GetButtonUp(LeftButton))
+            {
+                _requestedActions.Remove(InputAction.Left);
+            }
+
+            if (Input.GetButtonDown(RightButton))
+            {
+                _requestedActions.Add(InputAction.Right);
+            }
+            if (Input.GetButtonUp(RightButton))
+            {
+                _requestedActions.Remove(InputAction.Right);
+            }
+            
             if (Input.GetButtonDown(BlockButton))
             {
                 _requestedActions.Add(InputAction.Block);

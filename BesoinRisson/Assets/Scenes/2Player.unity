@@ -1059,9 +1059,6 @@ GameObject:
   - component: {fileID: 422374312}
   - component: {fileID: 422374311}
   - component: {fileID: 422374310}
-  - component: {fileID: 422374309}
-  - component: {fileID: 422374308}
-  - component: {fileID: 422374313}
   - component: {fileID: 422374314}
   - component: {fileID: 422374315}
   m_Layer: 6
@@ -1071,53 +1068,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &422374308
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 422374307}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!50 &422374309
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 422374307}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 1
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!23 &422374310
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1185,26 +1135,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &422374313
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 422374307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3688628f96d05da43b8c6b833547d923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkspeed: 10
-  _respawn: {fileID: 1628632977}
-  jumpForce: 5
-  swordAnimator: {fileID: 1576084195}
-  swordStabAnimation: {fileID: 0}
-  groundCheckObject: {fileID: 422374307}
-  sword: {fileID: 1576084190}
-  Adversary: {fileID: 1834610701}
 --- !u!114 &422374314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2012,6 +1942,7 @@ GameObject:
   - component: {fileID: 1628632976}
   - component: {fileID: 1628632977}
   - component: {fileID: 1628632979}
+  - component: {fileID: 1628632980}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -2073,6 +2004,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1: {fileID: 422374307}
   player2: {fileID: 1834610701}
+--- !u!114 &1628632980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628632974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d483caac154c584a9361ee04947f7c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1636722534
 GameObject:
   m_ObjectHideFlags: 0
@@ -2158,11 +2101,8 @@ GameObject:
   - component: {fileID: 1834610709}
   - component: {fileID: 1834610708}
   - component: {fileID: 1834610707}
-  - component: {fileID: 1834610706}
-  - component: {fileID: 1834610705}
   - component: {fileID: 1834610703}
   - component: {fileID: 1834610702}
-  - component: {fileID: 1834610710}
   m_Layer: 6
   m_Name: Rival
   m_TagString: Untagged
@@ -2199,53 +2139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a55d2304de58144a448a07854bde6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &1834610705
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1834610701}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!50 &1834610706
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1834610701}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 1
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!23 &1834610707
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2313,32 +2206,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1834610710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1834610701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7cb2cd688bde2d4eae6c778fc14e640, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkspeed: 10
-  _respawn: {fileID: 1628632977}
-  _player1State: {fileID: 422374313}
-  jumpForce: 5
-  sword: {fileID: 1870306026}
-  swordAnimator: {fileID: 0}
-  groundCheckObject: {fileID: 1834610701}
-  Adversary: {fileID: 422374307}
-  isBot: 0
---- !u!1 &1870306026 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6495499944031821334, guid: 738fa9e38e027b27d9a7dcf1a171d56b, type: 3}
-  m_PrefabInstance: {fileID: 783035877}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2137181606
 GameObject:
   m_ObjectHideFlags: 0

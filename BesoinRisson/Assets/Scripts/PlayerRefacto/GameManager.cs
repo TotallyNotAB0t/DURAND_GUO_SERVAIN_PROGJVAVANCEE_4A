@@ -1,4 +1,5 @@
 ﻿using System;
+using Behaviour.InputSystems;
 using Enums;
 using Interfaces;
 using UnityEngine;
@@ -8,61 +9,32 @@ namespace PlayerRefacto
     public class GameManager : MonoBehaviour
     {
         // ici c'est la logique de jeu, tu lui passes un gamestate et un input
-        private IInputProvider _inputProvider;
-        [SerializeField] private GameState state;
+        private PlayerInputs _inputProvider;
+        private PlayerInputs1 _inputProvider1;
+        private GameState state;
         [SerializeField] private GameObject player1;
         [SerializeField] private GameObject player2;
 
         private void Start()
         {
-            _inputProvider = GetComponent<IInputProvider>();
+            state = new GameState();
+            state.p1.pos = new Vector2(-3.5f, 0.75f);
+            state.p2.pos = new Vector2(3.5f, 0.75f);
+            _inputProvider = GetComponent<PlayerInputs>();
+            _inputProvider1 = GetComponent<PlayerInputs1>();
         }
         
         private void Update()
         {
-            Debug.Log($"p1 pos :{player1.transform.position}; p1 new vector : {state.p1.pos}");
+            //Debug.Log($"p1 pos :{player1.transform.position}; p1 new vector : {state.p1.pos}");
             ReadInputLeftOrRight();
-            player1.transform.position = state.p1.pos;
+            player1.transform.position = Vector2.MoveTowards(player1.transform.position, state.p1.pos, Time.deltaTime*5);
         }
         
         //Moving function
-        
-        
-        
-        
-        
-        
+
         //Input function
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+  
         
         //ici c'est du game manager
         /*public void readInputs(InputAction input, GameState.Player p1)
@@ -127,36 +99,34 @@ namespace PlayerRefacto
             }
         }
 
-        public void PlayerGoLeft(GameState.Player player)
+        public void PlayerGoLeft(bool isP1)
         {
-            player.pos += Vector2.left;
+            state.ModifyPos(isP1, Vector2.left * 0.1f);
         }
         
-        public void PlayerGoRight(GameState.Player player)
+        public void PlayerGoRight(bool isP1)
         {
-            player.pos += Vector2.right;
+            state.ModifyPos(isP1, Vector2.right * 0.1f);
         }
-
+        
         public void ReadInputLeftOrRight()
         {
             if (_inputProvider.GetActionPressed(InputAction.Left))
             {
-                PlayerGoLeft(state.p1);
+                PlayerGoLeft(true);
             }
-
             if (_inputProvider.GetActionPressed(InputAction.Left1))
             {
-                PlayerGoLeft(state.p2);
+                PlayerGoLeft(false);
             }
-
+            
             if (_inputProvider.GetActionPressed(InputAction.Right))
             {
-                PlayerGoRight(state.p1);
+                PlayerGoRight(true);
             }
-
             if (_inputProvider.GetActionPressed(InputAction.Right1))
             {
-                PlayerGoRight(state.p2);
+                PlayerGoRight(false);
             }
         }
 
