@@ -1,8 +1,5 @@
-﻿using System;
-using Behaviour.InputSystems;
-using Behaviour.Utils;
+﻿using Behaviour.InputSystems;
 using Enums;
-using Interfaces;
 using UnityEngine;
 
 namespace PlayerRefacto
@@ -26,7 +23,7 @@ namespace PlayerRefacto
             
             //Dire a l'epee de suivre les joueurs
             state.p1.swordCoord = Vector2.one;
-            state.p2.swordCoord = Vector2.one;
+            state.p2.swordCoord = new Vector2(2, 5);
             
             _inputProvider = GetComponent<PlayerInputs>();
             _inputProvider1 = GetComponent<PlayerInputs1>();
@@ -47,7 +44,6 @@ namespace PlayerRefacto
             ReadInput();
             objState.p1 = SimulatePhysics(objState.p1);
             objState.p2 = SimulatePhysics(objState.p2);
-            CheckWin();
         }
 
         private GameState.Player SimulatePhysics(GameState.Player player)
@@ -63,6 +59,9 @@ namespace PlayerRefacto
             {
                 player.velocity.y += -9.81f * 0.016f;
             }
+            
+            CheckWin();
+            ApplyKill();
 
             player.pos += player.velocity * 0.016f;
             player.velocity.x = 0;
@@ -158,7 +157,7 @@ namespace PlayerRefacto
         }
         private GameState.Player ApplyLeft(GameState.Player player)
         {
-            if (CheckOverlap(state.p1.swordCoord, 0.25f, state.p2.swordCoord, 0.25f)) return player;
+            //if (CheckOverlap(state.p1.swordCoord, 0.25f, state.p2.swordCoord, 0.25f)) return player;
             player.velocity.x = -7;
             player.isRight = false;
 
@@ -167,7 +166,7 @@ namespace PlayerRefacto
         
         private GameState.Player ApplyRight(GameState.Player player)
         {
-            if (CheckOverlap(state.p1.swordCoord, 0.25f, state.p2.swordCoord, 0.25f)) return player;
+            //if (CheckOverlap(state.p1.swordCoord, 0.25f, state.p2.swordCoord, 0.25f)) return player;
             player.velocity.x = 7;
             player.isRight = true;
             return player;
@@ -177,11 +176,26 @@ namespace PlayerRefacto
         {
             if (state.p1.pos.x > 18)
             {
+                Debug.LogError("P1 WON");
                 state.p1.hasWon = true;
-            } else if (state.p2.pos.x < 18)
+            } else if (state.p2.pos.x < -18)
             {
+                Debug.LogError("P2 WON");
                 state.p2.hasWon = true;
             }
+        }
+
+        private void ApplyKill()
+        {
+            if (CheckOverlap(state.p1.swordCoord, 0.25f, state.p2.pos, 0.5f))
+            {
+                state.p2.pos = new Vector2(state.p1.pos.x + 2f, 0.75f);
+            }
+            else if (CheckOverlap(state.p2.swordCoord, 0.25f, state.p1.pos, 0.5f))
+            {
+                state.p1.pos = new Vector2(state.p2.pos.x - 2f, 0.75f);
+            }
+            
         }
         
         
@@ -200,9 +214,9 @@ namespace PlayerRefacto
             return Vector2.Distance(collider1, new Vector2(collider1.x, ground.y)) < (radius1/2)+(size/2);
         }
 
-        private Vector2 ApplyGravity(GameState.Player player)
+        /*private Vector2 ApplyGravity(GameState.Player player)
         {
             return player.pos += new Vector2(player.pos.x, player.velocity.y);
-        }
+        }*/
     }
 }
