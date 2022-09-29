@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f40bebf-c1b9-4888-a70d-f477908e4a33" name="Changes" comment="Jump wip">
+    <list default="true" id="5f40bebf-c1b9-4888-a70d-f477908e4a33" name="Changes" comment="Merge Sword into master">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BesoinRisson/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BesoinRisson/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/2Player.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/2Player.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerRefacto/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerRefacto/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerRefacto/GameState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerRefacto/GameState.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +18,7 @@
         <entry key="$PROJECT_DIR$/.." value="optionMenu" />
       </map>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
@@ -48,9 +48,12 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Respawn.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Cours 2022-2023/Prog JV/Unity/DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A/BesoinRisson/Assets/Scenes/2Player.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Cours 2022-2023/Prog JV/Unity/DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A/BesoinRisson/Assets/Scripts/Game/Weapon/BlockSword1.anim" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuScripts.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovement2.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Cours 2022-2023/Prog JV/Unity/DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A/BesoinRisson/Assets/Scripts/PlayerRefacto/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerRefacto/GameState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerRefacto/PlayerManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/InputModules/BaseInput.cs" root0="SKIP_HIGHLIGHTING" />

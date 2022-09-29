@@ -20,7 +20,8 @@ namespace PlayerRefacto
         private void Start()
         {
             state = new GameState();
-            state.p1.pos = new Vector2(-3.5f, 0.75f);
+            state.p1.pos = new Vector2(-3.5f, 10.75f);
+            state.p1.velocity = Vector2.zero;
             state.p2.pos = new Vector2(3.5f, 0.75f);
             _inputProvider = GetComponent<PlayerInputs>();
             _inputProvider1 = GetComponent<PlayerInputs1>();
@@ -32,49 +33,77 @@ namespace PlayerRefacto
             GMBuffer = state;
             
             //Left and right move
-            ReadInputLeftOrRight();
-            player1.transform.position = Vector2.MoveTowards(player1.transform.position, state.p1.pos, Time.deltaTime*5);
-            player2.transform.position = Vector2.MoveTowards(player2.transform.position, state.p2.pos, Time.deltaTime*5);
-            
+            ReadInput();
+
             //Gravity
 
             MyUpdate();
             
             player1.transform.position = state.p1.pos;
+            player2.transform.position = state.p2.pos;
         }
 
         public void MyUpdate()
         {
-            Debug.LogError("pos p1 : "+state.p1.pos);
-            if (!CheckGround(state.p1.pos, 0.5f, new Vector2(0, 0.5f), 1))
+            if (CheckGround(state.p1.pos, 1f, new Vector2(0, -0.5f), 1) && state.p1.velocity.y < 0)
             {
-                Debug.LogError("not on ground");
-                GMBuffer.p1.pos = ApplyGravity(GMBuffer.p1.pos);
+                state.p1.velocity.y = 0;
+                state.p1.pos.y = 0.5f;
+                state.p1.isGrounded = true;
+                
+            }
+            else
+            {
+                state.p1.velocity.y += -9.81f * 0.016f;
             }
 
-            state.p1.pos = Vector2.MoveTowards(state.p1.pos, GMBuffer.p1.pos, 0.016f);
-            Debug.LogError("DESCEND : "+state.p1.pos);
+            state.p1.pos += state.p1.velocity * 0.016f;
+            state.p1.velocity.x = 0;
+            
+            if (CheckGround(state.p2.pos, 1f, new Vector2(0, -0.5f), 1) && state.p2.velocity.y < 0)
+            {
+                state.p2.velocity.y = 0;
+                state.p2.pos.y = 0.5f;
+                state.p2.isGrounded = true;
+                
+            }
+            else
+            {
+                state.p2.velocity.y += -9.81f * 0.016f;
+            }
+
+            state.p2.pos += state.p2.velocity * 0.016f;
+            state.p2.velocity.x = 0;
         }
 
         //Input function
-        public void ReadInputLeftOrRight()
+        public void ReadInput()
         {
             if (_inputProvider.GetActionPressed(InputAction.Left))
             {
-                PlayerGoLeft(true);
+                state.p1 = applyLeft(state.p1);
             }
             if (_inputProvider1.GetActionPressed(InputAction.Left1))
             {
-                PlayerGoLeft(false);
+                state.p2 = applyLeft(state.p2);
             }
             
             if (_inputProvider.GetActionPressed(InputAction.Right))
             {
-                PlayerGoRight(true);
+                state.p1 = applyRight(state.p1);
             }
             if (_inputProvider1.GetActionPressed(InputAction.Right1))
             {
-                PlayerGoRight(false);
+                state.p2 = applyRight(state.p2);
+            }
+            
+            if (_inputProvider.GetActionPressed(InputAction.Jump))
+            {
+                state.p1 = applyJump(state.p1);
+            }
+            if (_inputProvider1.GetActionPressed(InputAction.Jump1))
+            {
+                state.p2 = applyJump(state.p2);
             }
         }
         
@@ -171,13 +200,26 @@ namespace PlayerRefacto
             player.swordCoord = memo;
         }*/
 
-        /*private void applyJump(GameState.Player player)
+        private GameState.Player applyJump(GameState.Player player)
         {
-            player.isGrounded = false;
-            player.currentJumpSpeed = player.initialJumpSpeed;
-            player.starty = player.pos.y;
-            player.pos = Vector2.MoveTowards(player.pos, player.pos + new Vector2(player.pos.x, jumpForce), Time.deltaTime);
-        }*/
+            if (player.isGrounded)
+            {
+                player.velocity.y = 5;
+                player.isGrounded = false;
+            }
+
+            return player;
+        }
+        private GameState.Player applyLeft(GameState.Player player)
+        {
+            player.velocity.x = -7;
+            return player;
+        }
+        private GameState.Player applyRight(GameState.Player player)
+        {
+            player.velocity.x = 7;
+            return player;
+        }
         
         
         public bool CheckOverlap(Vector2 collider1, float radius1, Vector2 collider2, float radius2)
@@ -195,9 +237,9 @@ namespace PlayerRefacto
             return Vector2.Distance(collider1, new Vector2(collider1.x, ground.y)) < (radius1/2)+(size/2);
         }
 
-        private Vector2 ApplyGravity(Vector2 player)
+        private Vector2 ApplyGravity(GameState.Player player)
         {
-            return player + Vector2.down * 9.81f;
+            return player.pos += new Vector2(player.pos.x, player.velocity.y);
         }
     }
 }

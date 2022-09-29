@@ -17,6 +17,7 @@ namespace PlayerRefacto
         public struct Player
         {
             public Vector2 pos;
+            public Vector2 velocity;
             public SwordPos swordState;
             public Vector2 swordCoord;
             public bool isGrounded;
@@ -39,7 +40,7 @@ namespace PlayerRefacto
         private float jumpForce = 20;
         private float jumpTime;
         private float gravity = -9.81f;
-        private float velocity;
+        private float velocity = 0;
 
         public Player p1;
         public Player p2;
