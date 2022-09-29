@@ -30,6 +30,8 @@ namespace PlayerRefacto
             public bool hasWon;
         }
 
+        //public bool isFinished;
+        private float timer;
         private float swordRadius;
         private float playerRadius;
 
@@ -40,6 +42,24 @@ namespace PlayerRefacto
 
         public Player p1;
         public Player p2;
+
+        public GameState()
+        {
+            
+        }
+        
+        //Copy constructor
+        public GameState(GameState previousGamestate)
+        {
+            swordRadius = previousGamestate.swordRadius;
+            playerRadius = previousGamestate.playerRadius;
+            jumpForce = previousGamestate.jumpForce;
+            gravity = previousGamestate.gravity;
+            velocity = previousGamestate.velocity;
+            
+            p1 = previousGamestate.p1;
+            p2 = previousGamestate.p2;
+        }
         
         public List<InputAction> CheckInputsPossible(Player self, Player opponent)
         {
@@ -62,6 +82,15 @@ namespace PlayerRefacto
 
             return possible;
         }
-        
+
+        public bool IsFinished()
+        {
+            return p1.hasWon || p2.hasWon || timer == 0;
+        }
+
+        public bool HasWon()
+        {
+            return p2.hasWon;
+        }
     }
 }

@@ -1,8 +1,5 @@
-﻿using System;
-using Behaviour.InputSystems;
-using Behaviour.Utils;
+﻿using Behaviour.InputSystems;
 using Enums;
-using Interfaces;
 using UnityEngine;
 
 namespace PlayerRefacto
@@ -41,6 +38,7 @@ namespace PlayerRefacto
 
             MyUpdate(state);
             
+            //Apply gamestate to the graphic engine
             player1.transform.position = state.p1.pos;
             player2.transform.position = state.p2.pos;
             player1.transform.rotation = Quaternion.Euler(0, state.p1.isRight ? 0 : 180, 0);
@@ -50,14 +48,18 @@ namespace PlayerRefacto
             sword2.transform.position = state.p2.swordCoord;
         }
 
-        public void MyUpdate(GameState state)
+        public void MyUpdate(GameState objState)
         {
-            state.p1 = SimulatePhysics(state.p1);
-            state.p2 = SimulatePhysics(state.p2);
-            state.p1 = SwordPlacement(state.p1);
-            state.p2 = SwordPlacement(state.p2);
-            state.p1 = SwordStab(state.p1);
-            state.p2 = SwordStab(state.p2);
+            //Read player and bot moves
+            ReadInput();
+            objState.p1 = SimulatePhysics(objState.p1);
+            objState.p2 = SimulatePhysics(objState.p2);
+            objState.p1 = SimulatePhysics(objState.p1);
+            objState.p2 = SimulatePhysics(objState.p2);
+            objState.p1 = SwordPlacement(objState.p1);
+            objState.p2 = SwordPlacement(objState.p2);
+            objState.p1 = SwordStab(objState.p1);
+            objState.p2 = SwordStab(objState.p2);
         }
 
         private GameState.Player SimulatePhysics(GameState.Player player)
@@ -73,6 +75,9 @@ namespace PlayerRefacto
             {
                 player.velocity.y += -9.81f * 0.016f;
             }
+            
+            CheckWin();
+            ApplyKill();
 
             player.pos += player.velocity * 0.016f;
             player.velocity.x = 0;
@@ -133,67 +138,67 @@ namespace PlayerRefacto
         }
 
         //Input function
-        public void ReadInput()
+        public void ReadInput(InputAction action = InputAction.Up)
         {
             if (_inputProvider.GetActionPressed(InputAction.Left))
             {
-                state.p1 = applyLeft(state.p1);
+                state.p1 = ApplyLeft(state.p1);
             }
-            if (_inputProvider1.GetActionPressed(InputAction.Left1))
+            if (_inputProvider1.GetActionPressed(InputAction.Left1) || action == InputAction.Left1)
             {
-                state.p2 = applyLeft(state.p2);
+                state.p2 = ApplyLeft(state.p2);
             }
             
             if (_inputProvider.GetActionPressed(InputAction.Right))
             {
-                state.p1 = applyRight(state.p1);
+                state.p1 = ApplyRight(state.p1);
             }
-            if (_inputProvider1.GetActionPressed(InputAction.Right1))
+            if (_inputProvider1.GetActionPressed(InputAction.Right1) || action == InputAction.Right1)
             {
-                state.p2 = applyRight(state.p2);
+                state.p2 = ApplyRight(state.p2);
             }
             if (_inputProvider.GetActionPressed(InputAction.Up))
             {
-                state.p1 = applyUp(state.p1);
+                state.p1 = ApplyUp(state.p1);
                 _inputProvider.RemoveKey(InputAction.Up);
             }
             if (_inputProvider1.GetActionPressed(InputAction.Up1))
             {
-                state.p2 = applyUp(state.p2);
+                state.p2 = ApplyUp(state.p2);
                 _inputProvider1.RemoveKey(InputAction.Up1);
             }
             if (_inputProvider.GetActionPressed(InputAction.Down))
             {
-                state.p1 = applyDown(state.p1);
+                state.p1 = ApplyDown(state.p1);
                 _inputProvider.RemoveKey(InputAction.Down);
             }
             if (_inputProvider1.GetActionPressed(InputAction.Down1))
             {
-                state.p2 = applyDown(state.p2);
+                state.p2 = ApplyDown(state.p2);
                 _inputProvider1.RemoveKey(InputAction.Down1);
             }
             
             if (_inputProvider.GetActionPressed(InputAction.Jump))
             {
-                state.p1 = applyJump(state.p1);
+                state.p1 = ApplyJump(state.p1);
             }
-            if (_inputProvider1.GetActionPressed(InputAction.Jump1))
+            if (_inputProvider1.GetActionPressed(InputAction.Jump1) || action == InputAction.Jump1)
             {
-                state.p2 = applyJump(state.p2);
+                state.p2 = ApplyJump(state.p2);
             }
             
             if (_inputProvider.GetActionPressed(InputAction.Stab))
             {
-                state.p1 = applyStab(state.p1);
+                state.p1 = ApplyStab(state.p1);
             }
             if (_inputProvider1.GetActionPressed(InputAction.Stab1))
             {
-                state.p2 = applyStab(state.p2);
+                state.p2 = ApplyStab(state.p2);
             }
         }
         
         //Moving function
-        private GameState.Player applyUp(GameState.Player player)
+        private GameState.Player ApplyUp(GameState.Player player)
         {
             if (player.isAttacking)
             {
@@ -212,7 +217,7 @@ namespace PlayerRefacto
             return player;
         }
 
-        private GameState.Player applyDown(GameState.Player player)
+        private GameState.Player ApplyDown(GameState.Player player)
         {
             if (player.isAttacking)
             {
@@ -231,7 +236,7 @@ namespace PlayerRefacto
             return player;
         }
 
-        private GameState.Player applyStab(GameState.Player player)
+        private GameState.Player ApplyStab(GameState.Player player)
         {
             if (!player.isGrounded)
             {
@@ -252,7 +257,7 @@ namespace PlayerRefacto
             return player;
         }
 
-        private GameState.Player applyJump(GameState.Player player)
+        private GameState.Player ApplyJump(GameState.Player player)
         {
             if (player.isAttacking)
             {
@@ -266,25 +271,55 @@ namespace PlayerRefacto
 
             return player;
         }
-        private GameState.Player applyLeft(GameState.Player player)
+        private GameState.Player ApplyLeft(GameState.Player player)
         {
             if (player.isAttacking)
             {
                 return player;
             }
+            //if (CheckOverlap(state.p1.swordCoord, 0.25f, state.p2.swordCoord, 0.25f)) return player;
             player.velocity.x = -7;
             player.isRight = false;
+
             return player;
         }
-        private GameState.Player applyRight(GameState.Player player)
+        
+        private GameState.Player ApplyRight(GameState.Player player)
         {
             if (player.isAttacking)
             {
                 return player;
             }
+            //if (CheckOverlap(state.p1.swordCoord, 0.25f, state.p2.swordCoord, 0.25f)) return player;
             player.velocity.x = 7;
             player.isRight = true;
             return player;
+        }
+
+        private void CheckWin()
+        {
+            if (state.p1.pos.x > 18)
+            {
+                Debug.LogError("P1 WON");
+                state.p1.hasWon = true;
+            } else if (state.p2.pos.x < -18)
+            {
+                Debug.LogError("P2 WON");
+                state.p2.hasWon = true;
+            }
+        }
+
+        private void ApplyKill()
+        {
+            if (CheckOverlap(state.p1.swordCoord, 0.25f, state.p2.pos, 0.5f))
+            {
+                state.p2.pos = new Vector2(state.p1.pos.x + 2f, 0.75f);
+            }
+            else if (CheckOverlap(state.p2.swordCoord, 0.25f, state.p1.pos, 0.5f))
+            {
+                state.p1.pos = new Vector2(state.p2.pos.x - 2f, 0.75f);
+            }
+            
         }
         
         
@@ -303,5 +338,10 @@ namespace PlayerRefacto
             return Vector2.Distance(collider1, new Vector2(collider1.x, ground.y)) < (radius1/2)+(size/2);
         }
         
+
+        /*private Vector2 ApplyGravity(GameState.Player player)
+        {
+            return player.pos += new Vector2(player.pos.x, player.velocity.y);
+        }*/
     }
 }
