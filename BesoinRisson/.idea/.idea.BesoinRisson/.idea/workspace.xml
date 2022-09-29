@@ -2,34 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f40bebf-c1b9-4888-a70d-f477908e4a33" name="Changes" comment="Merge Sword into master">
-      <change afterPath="$PROJECT_DIR$/Assets/Respawn.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Respawn.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterMoves.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Weapon/BlockSword1.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Weapon/BlockSword1.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Weapon/Idle.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Weapon/Idle.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/BurstAotSettings_StandaloneLinux64.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BesoinRisson/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BesoinRisson/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Libs/Sword.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Libs/Sword.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/2Player.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/2Player.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Player vs AI.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Player vs AI.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/RandomAgent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/RandomAgent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enums/InputAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enums/InputAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Weapon/Sword1Attack.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Weapon/Sword1Attack.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Weapon/Sword1Estoque.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Weapon/Sword1Estoque.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Weapon/SwordP1.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Weapon/SwordP1.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ICheck.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/ICheck.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ICheck.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/ICheck.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerInputs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerInputs.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement2.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WinScreenScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WinScreenScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WinZoneScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WinZoneScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SettingsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SettingsController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,10 +25,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovement2.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/InputModules/BaseInput.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Core/Serialization/SerializableType.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Pocky/Documents/Projy/DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A/BesoinRisson/ProjectSettings/EditorBuildSettings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Pocky/Documents/Projy/DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A/BesoinRisson/ProjectSettings/EditorBuildSettings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Pocky/Documents/Projy/DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A/BesoinRisson/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Pocky/Documents/Projy/DURAND_GUO_SERVAIN_PROGJVAVANCEE_4A/BesoinRisson/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -64,17 +35,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.build.unityPlugin&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Discover.Launch.Via.Unity": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "rider.run.widget.enabled.cache": "false",
+    "settings.editor.selected.configurable": "preferences.build.unityPlugin",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$PROJECT_DIR$/../../unibuilds/besoinrisson\BesoinRisson.exe" />
@@ -116,7 +88,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="14ac433e-b43b-421e-a45f-5e07744517d8" name="Changes" comment="" />
+      <changelist id="5f40bebf-c1b9-4888-a70d-f477908e4a33" name="Changes" comment="Merge Sword into master" />
       <created>1664201508757</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -126,6 +98,7 @@
       <workItem from="1664283797491" duration="6754000" />
       <workItem from="1664265663269" duration="8907000" />
       <workItem from="1664284536286" duration="6373000" />
+      <workItem from="1664484755588" duration="2894000" />
     </task>
     <task id="LOCAL-00001" summary="Merge Sword into master">
       <created>1664305402181</created>
