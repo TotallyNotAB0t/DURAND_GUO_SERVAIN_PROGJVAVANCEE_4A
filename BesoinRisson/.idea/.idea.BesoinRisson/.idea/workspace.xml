@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f40bebf-c1b9-4888-a70d-f477908e4a33" name="Changes" comment="New playerinput wip">
+    <list default="true" id="5f40bebf-c1b9-4888-a70d-f477908e4a33" name="Changes" comment="Jump wip">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BesoinRisson/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BesoinRisson/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/2Player.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/2Player.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerInputs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerInputs.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerRefacto/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerRefacto/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerRefacto/GameState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerRefacto/GameState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +128,8 @@
       <workItem from="1664283797491" duration="6754000" />
       <workItem from="1664265663269" duration="8907000" />
       <workItem from="1664284536286" duration="6373000" />
-      <workItem from="1664438742064" duration="8432000" />
+      <workItem from="1664438742064" duration="10450000" />
+      <workItem from="1664453536300" duration="1536000" />
     </task>
     <task id="LOCAL-00001" summary="Merge Sword into master">
       <created>1664305402181</created>
@@ -145,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664377886697</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Jump wip">
+      <created>1664447646600</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1664447646600</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,7 +175,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge Sword into master" />
     <MESSAGE value="New playerinput wip" />
-    <option name="LAST_COMMIT_MESSAGE" value="New playerinput wip" />
+    <MESSAGE value="Jump wip" />
+    <option name="LAST_COMMIT_MESSAGE" value="Jump wip" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
