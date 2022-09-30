@@ -6,7 +6,7 @@ namespace PlayerRefacto
 {
     public class GameState
     {
-        float simTickRate = 0.016f; //(0.16f = 60 fps), remplaces Time.deltaTime
+        public float simTickRate = 0.016f; //(0.16f = 60 fps), remplaces Time.deltaTime
         public enum SwordPos
         {
             Top,
@@ -31,7 +31,7 @@ namespace PlayerRefacto
         }
 
         //public bool isFinished;
-        private float timer;
+        public float timer;
         private float swordRadius;
         private float playerRadius;
 
@@ -90,7 +90,7 @@ namespace PlayerRefacto
 
         public bool IsFinished()
         {
-            return p1.hasWon || p2.hasWon || timer == 0 || !p1.isAlive || !p2.isAlive;
+            return p1.hasWon || p2.hasWon || timer < 0 || !p1.isAlive || !p2.isAlive;
         }
 
         public bool HasWon()

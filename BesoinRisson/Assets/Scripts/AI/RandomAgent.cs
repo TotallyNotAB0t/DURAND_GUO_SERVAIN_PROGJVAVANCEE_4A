@@ -16,10 +16,14 @@ public class RandomAgent : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (GameManagerScript.state.IsFinished())   
+        {
+            return;
+        }
+        
         var possibleInput =
             GameManagerScript.state.CheckInputsPossible(GameManagerScript.state.p2, GameManagerScript.state.p1);
         GameManagerScript.ReadInput(possibleInput[Random.Range(0, possibleInput.Count)]);
-        
     }
 
 }
