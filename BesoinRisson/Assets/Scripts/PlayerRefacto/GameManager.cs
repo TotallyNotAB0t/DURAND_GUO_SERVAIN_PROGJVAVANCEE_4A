@@ -96,7 +96,7 @@ namespace PlayerRefacto
                 _ => player.pos.y
             };
 
-            player.swordCoord.x = player.isRight ? player.pos.x + 1.8f : player.pos.x + -1.8f;
+            player.swordCoord.x = player.isRight ? player.pos.x + 1.9f : player.pos.x + -1.9f;
             return player;
         }
         private GameState.Player SwordStab(GameState.Player player)
@@ -107,7 +107,7 @@ namespace PlayerRefacto
             }
             if (player.isRight)
             {
-                if (player.swordCoord.x < player.pos.x + 1.8f && player.swordVelocity.x < 0)
+                if (player.swordCoord.x < player.pos.x + 1.9f && player.swordVelocity.x < 0)
                 {
                     player.swordVelocity.x = 0;
                 }
@@ -118,7 +118,7 @@ namespace PlayerRefacto
             }
             else
             {
-                if (player.swordCoord.x > player.pos.x - 1.8f && player.swordVelocity.x > 0)
+                if (player.swordCoord.x > player.pos.x - 1.9f && player.swordVelocity.x > 0)
                 {
                     player.swordVelocity.x = 0;
                 }
