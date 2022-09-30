@@ -23,7 +23,7 @@ public class SettingsController : MonoBehaviour
 
         for (int i = 0; i < _resolutions.Length; i++)
         {
-            string option = _resolutions[i].width + "x" + _resolutions[i].height;
+            string option = _resolutions[i].width + " x " + _resolutions[i].height;
             options.Add(option);
             if (_resolutions[i].width == Screen.currentResolution.width 
                 && _resolutions[i].height == Screen.currentResolution.height)
@@ -35,10 +35,10 @@ public class SettingsController : MonoBehaviour
         LoadSettings(currentResolutionIndex);
     }
 
-    public void SetVolume(float volume)
+    public void SetVolume()
     {
-        _audioMixer.SetFloat("Volume", volume);
-        _currentVolume = volume;
+        _audioMixer.SetFloat("Volume", _volumeSlider.value);
+        _currentVolume = _volumeSlider.value;
     }
 
     public void SetFullScreen()
@@ -48,7 +48,6 @@ public class SettingsController : MonoBehaviour
 
     public void SetResolution()
     {
-        Debug.Log(_resolutionDropdown.value);
         Resolution resolution = _resolutions[_resolutionDropdown.value];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }

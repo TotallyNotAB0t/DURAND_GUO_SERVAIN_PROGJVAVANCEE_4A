@@ -92,5 +92,11 @@ namespace PlayerRefacto
         {
             return p2.hasWon;
         }
+        
+        //decoy
+        public GameState PlayAction(InputAction input)
+        {
+            return null;
+        }
     }
 }
