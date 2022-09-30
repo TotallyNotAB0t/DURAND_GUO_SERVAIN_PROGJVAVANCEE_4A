@@ -32,7 +32,7 @@ namespace PlayerRefacto
             _inputProvider1 = GetComponent<PlayerInputs1>();
         }
         
-        private void Update()
+        private void FixedUpdate()
         {
             ReadInput();
 
@@ -148,7 +148,6 @@ namespace PlayerRefacto
             {
                 state.p2 = ApplyLeft(state.p2);
             }
-            
             if (_inputProvider.GetActionPressed(InputAction.Right))
             {
                 state.p1 = ApplyRight(state.p1);
@@ -162,7 +161,7 @@ namespace PlayerRefacto
                 state.p1 = ApplyUp(state.p1);
                 _inputProvider.RemoveKey(InputAction.Up);
             }
-            if (_inputProvider1.GetActionPressed(InputAction.Up1))
+            if (_inputProvider1.GetActionPressed(InputAction.Up1) || action == InputAction.Up1)
             {
                 state.p2 = ApplyUp(state.p2);
                 _inputProvider1.RemoveKey(InputAction.Up1);
@@ -172,7 +171,7 @@ namespace PlayerRefacto
                 state.p1 = ApplyDown(state.p1);
                 _inputProvider.RemoveKey(InputAction.Down);
             }
-            if (_inputProvider1.GetActionPressed(InputAction.Down1))
+            if (_inputProvider1.GetActionPressed(InputAction.Down1) || action == InputAction.Down1)
             {
                 state.p2 = ApplyDown(state.p2);
                 _inputProvider1.RemoveKey(InputAction.Down1);
@@ -191,7 +190,7 @@ namespace PlayerRefacto
             {
                 state.p1 = ApplyStab(state.p1);
             }
-            if (_inputProvider1.GetActionPressed(InputAction.Stab1))
+            if (_inputProvider1.GetActionPressed(InputAction.Stab1) || action == InputAction.Stab1)
             {
                 state.p2 = ApplyStab(state.p2);
             }

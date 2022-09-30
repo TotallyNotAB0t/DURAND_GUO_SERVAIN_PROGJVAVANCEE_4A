@@ -73,7 +73,15 @@ public class MCTSLoop
         if (Random.Range(0f, 1f) > RATIO_EXPLOIT_EXPLORE)
         {
             //Exploit
-            
+            MCTSAgentNode bestChild = null;
+            foreach (var node in allunfinichednodes)
+            {
+                if (bestChild == null || node.ratioWin > bestChild.ratioWin)
+                {
+                    bestChild = node;
+                }
+            }
+            return bestChild;
         }
 
         //Explore
