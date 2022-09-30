@@ -137,7 +137,7 @@ namespace PlayerRefacto
             return player;
         }
 
-        //Input function
+        //Input function, surement le doAction
         public void ReadInput(InputAction action = InputAction.Up)
         {
             if (_inputProvider.GetActionPressed(InputAction.Left))

@@ -128,6 +128,7 @@ public class MCTSLoop
         {
             agent.numberPlayed += NUMBER_SIMULATION;
             agent.numberWin += numberVictory;
+            agent.ratioWin = agent.numberWin / agent.numberPlayed;
             if (agent.children.Length == agent.gamestate.CheckInputsPossible(agent.gamestate.p2, agent.gamestate.p1).Count)
             {
                 agent.allChildrenFinished = true;
