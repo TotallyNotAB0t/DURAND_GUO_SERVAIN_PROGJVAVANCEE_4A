@@ -33,12 +33,14 @@ public class SettingsController : MonoBehaviour
         _resolutionDropdown.AddOptions(options);
         _resolutionDropdown.RefreshShownValue();
         LoadSettings(currentResolutionIndex);
+        AudioListener.volume = _currentVolume;
     }
 
     public void SetVolume()
     {
-        _audioMixer.SetFloat("Volume", _volumeSlider.value);
+        
         _currentVolume = _volumeSlider.value;
+        AudioListener.volume = _currentVolume;
     }
 
     public void SetFullScreen()
