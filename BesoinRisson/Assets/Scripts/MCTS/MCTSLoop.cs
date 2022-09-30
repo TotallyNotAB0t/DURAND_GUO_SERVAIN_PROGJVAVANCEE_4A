@@ -31,8 +31,8 @@ public class MCTSAgentNode
 
 public class MCTSLoop
 {
-    private readonly uint NUMBER_SIMULATION = 20;
-    private readonly static uint NUMBER_TESTS = 50;
+    private readonly uint NUMBER_SIMULATION = 30;
+    private readonly static uint NUMBER_TESTS = 150;
     private readonly float RATIO_EXPLOIT_EXPLORE = .5f;
 
     private MCTSAgentNode parentNode;
@@ -46,7 +46,7 @@ public class MCTSLoop
         allunfinichednodes.Add(this.parentNode);
     }
     
-    private void Main( GameState initGamestate)
+    private InputAction ProcessLoop( GameState initGamestate)
     {
         // On copies le gameState
         currentNode.gamestate = new GameState(initGamestate);
@@ -58,6 +58,14 @@ public class MCTSLoop
             uint numberVictory = AgentSimulate(newAgentNode, NUMBER_SIMULATION);
             AgentBackpropagation(newAgentNode, numberVictory, NUMBER_SIMULATION);
         }
+
+        MCTSAgentNode bestChild = null;
+        foreach (var child in parentNode.children)
+        {
+            if (bestChild == null || bestChild.ratioWin < child.ratioWin) bestChild = child;
+        }
+
+        return bestChild.actionToDo;
     }
 
     /*

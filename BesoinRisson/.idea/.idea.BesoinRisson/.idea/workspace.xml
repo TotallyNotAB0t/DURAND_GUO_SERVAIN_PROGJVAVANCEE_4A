@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5f40bebf-c1b9-4888-a70d-f477908e4a33" name="Changes" comment="Merge Sword into master">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BesoinRisson/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BesoinRisson/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/2Player.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/2Player.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Player vs AI.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Player vs AI.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MCTS/MCTSLoop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MCTS/MCTSLoop.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerRefacto/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerRefacto/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/PORKYS_ SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/PORKYS_ SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
