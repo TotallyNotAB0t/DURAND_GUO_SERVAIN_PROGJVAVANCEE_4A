@@ -24,7 +24,9 @@ namespace PlayerRefacto
 
         private void Start()
         {
+            Time.timeScale = 1f;
             state = new GameState();
+            state.timer = 25f;
             state.p1.pos = new Vector2(-3.5f, 0.75f);
             state.p1.velocity = Vector2.zero;
             state.p1.isRight = true;
@@ -40,11 +42,11 @@ namespace PlayerRefacto
             _inputProvider1 = GetComponent<PlayerInputs1>();
         }
         
-        private void FixedUpdate()
+        private void Update()
         {
             ReadInput();
 
-            MyUpdate(state);
+            MyUpdate(state, Time.deltaTime);
             
             //Apply gamestate to the graphic engine
             player1.transform.position = state.p1.pos;
@@ -68,23 +70,30 @@ namespace PlayerRefacto
                 _uiWinScreen.SetActive(true);
                 Time.timeScale = 0;
             }
+            else if (state.IsFinished())
+            {
+                _winnerText.text = "DRAW";
+                _uiWinScreen.SetActive(true);
+                Time.timeScale = 0;
+            }
         }
 
-        public void MyUpdate(GameState objState)
+        public void MyUpdate(GameState objState, float tickRate = 0.016f)
         {
             //Read player and bot moves
             ReadInput();
-            objState.p1 = SimulatePhysics(objState.p1);
-            objState.p2 = SimulatePhysics(objState.p2);
-            objState.p1 = SimulatePhysics(objState.p1);
-            objState.p2 = SimulatePhysics(objState.p2);
-            objState.p1 = SwordPlacement(objState.p1);
-            objState.p2 = SwordPlacement(objState.p2);
-            objState.p1 = SwordStab(objState.p1);
-            objState.p2 = SwordStab(objState.p2);
+            objState.p1 = SimulatePhysics(objState.p1, tickRate);
+            objState.p2 = SimulatePhysics(objState.p2, tickRate);
+            objState.p1 = SimulatePhysics(objState.p1, tickRate);
+            objState.p2 = SimulatePhysics(objState.p2, tickRate);
+            objState.p1 = SwordPlacement(objState.p1, tickRate);
+            objState.p2 = SwordPlacement(objState.p2, tickRate);
+            objState.p1 = SwordStab(objState.p1, tickRate);
+            objState.p2 = SwordStab(objState.p2, tickRate);
+            objState.timer -= tickRate;
         }
 
-        private GameState.Player SimulatePhysics(GameState.Player player)
+        private GameState.Player SimulatePhysics(GameState.Player player, float tickRate = 0.016f)
         {
             if (CheckGround(player.pos, 1f, new Vector2(0, -0.5f), 1f) && player.velocity.y < 0)
             {
@@ -95,18 +104,18 @@ namespace PlayerRefacto
             }
             else
             {
-                player.velocity.y += -9.81f * 0.016f;
+                player.velocity.y += -9.81f * tickRate;
             }
             
             CheckWin();
             ApplyKill();
 
-            player.pos += player.velocity * 0.016f;
+            player.pos += player.velocity * tickRate;
             player.velocity.x = 0;
             return player;
         }
 
-        private GameState.Player SwordPlacement(GameState.Player player)
+        private GameState.Player SwordPlacement(GameState.Player player, float tickRate = 0.016f)
         {
             if (player.isAttacking)
                 return player;
@@ -121,7 +130,7 @@ namespace PlayerRefacto
             player.swordCoord.x = player.isRight ? player.pos.x + 1.9f : player.pos.x + -1.9f;
             return player;
         }
-        private GameState.Player SwordStab(GameState.Player player)
+        private GameState.Player SwordStab(GameState.Player player, float tickRate = 0.016f)
         {
             if (!player.isAttacking)
             {
@@ -135,7 +144,7 @@ namespace PlayerRefacto
                 }
                 else
                 {
-                    player.swordVelocity.x += -300f * 0.016f;
+                    player.swordVelocity.x += -300f * tickRate;
                 }
             }
             else
@@ -146,12 +155,12 @@ namespace PlayerRefacto
                 }
                 else
                 {
-                    player.swordVelocity.x += 300f * 0.016f;
+                    player.swordVelocity.x += 300f * tickRate;
                 }
             }
 
-            player.swordCoord.x += player.swordVelocity.x * 0.016f;
-            player.cooldown -= 0.016f;
+            player.swordCoord.x += player.swordVelocity.x * tickRate;
+            player.cooldown -= tickRate;
             if (player.cooldown < 0)
             {
                 player.isAttacking = false;
@@ -321,11 +330,9 @@ namespace PlayerRefacto
         {
             if (state.p1.pos.x > 18 || !state.p2.isAlive)
             {
-                Debug.LogError("P1 WON");
                 state.p1.hasWon = true;
             } else if (state.p2.pos.x < -18 || !state.p1.isAlive)
             {
-                Debug.LogError("P2 WON");
                 state.p2.hasWon = true;
             }
         }
