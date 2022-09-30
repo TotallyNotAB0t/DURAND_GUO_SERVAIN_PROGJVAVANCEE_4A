@@ -10,7 +10,7 @@ namespace PlayerRefacto
         // ici c'est la logique de jeu, tu lui passes un gamestate et un input
         private PlayerInputs _inputProvider;
         private PlayerInputs1 _inputProvider1;
-        private GameState state;
+        public GameState state;
         private GameState GMBuffer;
         [SerializeField] private GameObject player1;
         [SerializeField] private GameObject player2;

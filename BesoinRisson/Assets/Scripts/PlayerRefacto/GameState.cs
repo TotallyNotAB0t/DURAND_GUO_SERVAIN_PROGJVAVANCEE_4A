@@ -65,9 +65,14 @@ namespace PlayerRefacto
         {
             List<InputAction> possible = new List<InputAction>();
 
-            if (self.hasWon || !self.isAlive || opponent.hasWon || self.isAttacking) return possible;
+            if (self.hasWon || !self.isAlive || opponent.hasWon || self.isAttacking)
+            {   
+                possible.Add(InputAction.Idle);
+                return possible;
+            }
             
-            //gauche droite?
+            possible.Add(InputAction.Left1);
+            possible.Add(InputAction.Right1);
             possible.Add(InputAction.Up1);
             possible.Add(InputAction.Down1);
             possible.Add(InputAction.Jump1);
