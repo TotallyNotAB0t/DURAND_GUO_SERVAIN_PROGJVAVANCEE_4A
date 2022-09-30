@@ -1,9 +1,3 @@
-using System;
-using System.Collections;
-using Enums;
-using Extensions;
-using Interfaces;
-using JetBrains.Annotations;
 using PlayerRefacto;
 using UnityEngine;
 using Random = UnityEngine.Random;

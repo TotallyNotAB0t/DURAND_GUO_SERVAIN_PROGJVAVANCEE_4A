@@ -11,7 +11,6 @@ namespace PlayerRefacto
         private PlayerInputs _inputProvider;
         private PlayerInputs1 _inputProvider1;
         public GameState state;
-        private GameState GMBuffer;
         [SerializeField] private GameObject player1;
         [SerializeField] private GameObject player2;
         [SerializeField] private GameObject sword1;
@@ -42,11 +41,11 @@ namespace PlayerRefacto
             _inputProvider1 = GetComponent<PlayerInputs1>();
         }
         
-        private void Update()
+        private void FixedUpdate()
         {
             ReadInput();
 
-            MyUpdate(state, Time.deltaTime);
+            MyUpdate(state);
             
             //Apply gamestate to the graphic engine
             player1.transform.position = state.p1.pos;
