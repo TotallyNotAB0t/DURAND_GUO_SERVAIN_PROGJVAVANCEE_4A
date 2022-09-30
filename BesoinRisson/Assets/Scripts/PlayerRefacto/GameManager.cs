@@ -1,5 +1,6 @@
 ﻿using Behaviour.InputSystems;
 using Enums;
+using TMPro;
 using UnityEngine;
 
 namespace PlayerRefacto
@@ -15,6 +16,11 @@ namespace PlayerRefacto
         [SerializeField] private GameObject player2;
         [SerializeField] private GameObject sword1;
         [SerializeField] private GameObject sword2;
+        
+        [SerializeField] private GameObject _player;
+        [SerializeField] private GameObject _rival;
+        [SerializeField] private GameObject _uiWinScreen;
+        [SerializeField] private TextMeshProUGUI _winnerText;
 
         private void Start()
         {
@@ -23,10 +29,12 @@ namespace PlayerRefacto
             state.p1.velocity = Vector2.zero;
             state.p1.isRight = true;
             state.p1.swordState = GameState.SwordPos.Mid;
+            state.p1.isAlive = true;
             state.p2.pos = new Vector2(3.5f, 0.75f);
             state.p2.velocity = Vector2.zero;
             state.p2.isRight = false;
             state.p2.swordState = GameState.SwordPos.Mid;
+            state.p2.isAlive = true;
             
             _inputProvider = GetComponent<PlayerInputs>();
             _inputProvider1 = GetComponent<PlayerInputs1>();
@@ -46,6 +54,20 @@ namespace PlayerRefacto
 
             sword1.transform.position = state.p1.swordCoord;
             sword2.transform.position = state.p2.swordCoord;
+            
+            //Win applying to the scene
+            if (state.p1.hasWon)
+            {
+                _winnerText.text = $"{_player.name} won!";
+                _uiWinScreen.SetActive(true);
+                Time.timeScale = 0;
+            }
+            else if (state.p2.hasWon)
+            {
+                _winnerText.text = $"{_rival.name} won!";
+                _uiWinScreen.SetActive(true);
+                Time.timeScale = 0;
+            }
         }
 
         public void MyUpdate(GameState objState)
@@ -138,7 +160,7 @@ namespace PlayerRefacto
         }
 
         //Input function, surement le doAction
-        public void ReadInput(InputAction action = InputAction.Up)
+        public void ReadInput(InputAction action = InputAction.Idle)
         {
             if (_inputProvider.GetActionPressed(InputAction.Left))
             {
@@ -297,11 +319,11 @@ namespace PlayerRefacto
 
         private void CheckWin()
         {
-            if (state.p1.pos.x > 18)
+            if (state.p1.pos.x > 18 || !state.p2.isAlive)
             {
                 Debug.LogError("P1 WON");
                 state.p1.hasWon = true;
-            } else if (state.p2.pos.x < -18)
+            } else if (state.p2.pos.x < -18 || !state.p1.isAlive)
             {
                 Debug.LogError("P2 WON");
                 state.p2.hasWon = true;
@@ -310,37 +332,37 @@ namespace PlayerRefacto
 
         private void ApplyKill()
         {
-            if (CheckOverlap(state.p1.swordCoord, 0.25f, state.p2.pos, 0.5f))
+            if (CheckOverlap(state.p1.swordCoord, 0.25f, state.p2.pos, 1f) && state.p1.isAttacking)
             {
-                state.p2.pos = new Vector2(state.p1.pos.x + 2f, 0.75f);
+                if (CheckHeight(state.p1, state.p2))
+                {
+                    return;
+                }
+                state.p2.isAlive = false;
             }
-            else if (CheckOverlap(state.p2.swordCoord, 0.25f, state.p1.pos, 0.5f))
+            else if (CheckOverlap(state.p2.swordCoord, 0.25f, state.p1.pos, 1f) && state.p2.isAttacking)
             {
-                state.p1.pos = new Vector2(state.p2.pos.x - 2f, 0.75f);
+                if (CheckHeight(state.p1, state.p2))
+                {
+                    return;
+                }
+                state.p1.isAlive = false;
             }
-            
         }
-        
-        
+
+        private bool CheckHeight(GameState.Player p1, GameState.Player p2)
+        {
+            return p1.swordState == p2.swordState;
+        }
+
         public bool CheckOverlap(Vector2 collider1, float radius1, Vector2 collider2, float radius2)
         {
             return Vector2.Distance(collider1, collider2) < (radius1/2)+(radius2/2);
         }
-        
-        public bool Check(Vector2 collider1, float radius1, Vector2 collider2, float radius2)
-        {
-            return Vector2.Distance(collider1, collider2) < (radius1/2)+(radius2/2);
-        }
-        
+
         public bool CheckGround(Vector2 collider1, float radius1, Vector2 ground, float size)
         {
             return Vector2.Distance(collider1, new Vector2(collider1.x, ground.y)) < (radius1/2)+(size/2);
         }
-        
-
-        /*private Vector2 ApplyGravity(GameState.Player player)
-        {
-            return player.pos += new Vector2(player.pos.x, player.velocity.y);
-        }*/
     }
 }

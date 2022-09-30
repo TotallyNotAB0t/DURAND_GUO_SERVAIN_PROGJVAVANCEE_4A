@@ -85,7 +85,7 @@ namespace PlayerRefacto
 
         public bool IsFinished()
         {
-            return p1.hasWon || p2.hasWon || timer == 0;
+            return p1.hasWon || p2.hasWon || timer == 0 || !p1.isAlive || !p2.isAlive;
         }
 
         public bool HasWon()

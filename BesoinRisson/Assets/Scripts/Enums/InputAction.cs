@@ -17,6 +17,7 @@ namespace Enums
         Stab1,
         Throw1,
         Block,
-        Block1
+        Block1,
+        Idle
     }
 }
