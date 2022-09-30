@@ -247,12 +247,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 260832101}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
 --- !u!23 &260832101
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -611,8 +611,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff45b81fdd86ed541bc7c141c8a67e50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 0}
-  _rival: {fileID: 0}
+  _player: {fileID: 1814668716}
+  _rival: {fileID: 1834610701}
   _playerfinish: {fileID: 900200246}
   _rivalfinish: {fileID: 1635260123}
   _cameraMovespeed: 2
@@ -991,6 +991,10 @@ MonoBehaviour:
   player2: {fileID: 1834610701}
   sword1: {fileID: 1191873218}
   sword2: {fileID: 2127642902}
+  _player: {fileID: 1814668716}
+  _rival: {fileID: 1834610701}
+  _uiWinScreen: {fileID: 1399904937}
+  _winnerText: {fileID: 1310705482}
 --- !u!114 &852899881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1954,12 +1958,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1590088145}
   m_maskType: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
 --- !u!23 &1590088145
 MeshRenderer:
   m_ObjectHideFlags: 0
