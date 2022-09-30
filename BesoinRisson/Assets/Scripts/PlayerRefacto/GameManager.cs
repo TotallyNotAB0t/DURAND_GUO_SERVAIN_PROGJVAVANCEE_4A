@@ -51,8 +51,8 @@ namespace PlayerRefacto
             //Apply gamestate to the graphic engine
             player1.transform.position = state.p1.pos;
             player2.transform.position = state.p2.pos;
-            player1.transform.rotation = Quaternion.Euler(0, state.p1.isRight ? 0 : 180, 0);
-            player2.transform.rotation = Quaternion.Euler(0, state.p2.isRight ? 0 : 180, 0);
+            player1.transform.Find("Sprite").transform.rotation = Quaternion.Euler(0, state.p1.isRight ? 0 : 180, 0);
+            player2.transform.Find("Sprite").transform.rotation = Quaternion.Euler(0, state.p2.isRight ? 0 : 180, 0);
 
             sword1.transform.position = state.p1.swordCoord;
             sword2.transform.position = state.p2.swordCoord;
