@@ -81,16 +81,16 @@ public class PlayerMovement2 : MonoBehaviour
     }
     private void ApplyJump()
     {
-        if( IsGrounded() && _inputProvider.GetActionPressed(InputAction.Jump1))
+        if( /*IsGrounded() &&*/ _inputProvider.GetActionPressed(InputAction.Jump1))
         {
             _rigidbody.SetVelocity(Axis.Y, jumpForce);
         }
     }
     
-    private bool IsGrounded()
+    /*private bool IsGrounded()
     {
         return _groundCheck.Check();
-    }
+    }*/
     
     private void ApplyBlock()
     {

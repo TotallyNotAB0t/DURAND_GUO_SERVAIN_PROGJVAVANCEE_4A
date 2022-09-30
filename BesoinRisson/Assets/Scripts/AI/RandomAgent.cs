@@ -106,7 +106,7 @@ public class RandomAgent : MonoBehaviour
 
     private void ApplyJump()
     {
-        if( IsGrounded() && ActionList[4])
+        if( /*IsGrounded() &&*/ ActionList[4])
         {
             _rigidbody.SetVelocity(Axis.Y, jumpForce);
         }
@@ -122,8 +122,8 @@ public class RandomAgent : MonoBehaviour
         }
     }
 
-    private bool IsGrounded()
+    /*private bool IsGrounded()
     {
         return _groundCheck.Check();
-    }
+    }*/
 }

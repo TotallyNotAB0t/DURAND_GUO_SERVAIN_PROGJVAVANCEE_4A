@@ -9,19 +9,22 @@ namespace Behaviour.Utils
         [SerializeField] private float height = .1f;
 
         [SerializeField] private LayerMask collisionMask;
-        public bool Check()
+        private ICheck _checkImplementation;
+
+        public bool Check(Vector2 collider1, float radius1, Vector2 collider2, float radius2)
         {
-            return Physics2D.OverlapBox(
-                transform.position,
-                new Vector2(width, height),
-                0,
-                collisionMask);
+            return Vector2.Distance(collider1, collider2) < (radius1/2)+(radius2/2);
+        }
+        public bool CheckGround(Vector2 collider1, float radius1, Vector2 ground, float size)
+        {
+            return Vector2.Distance(collider1, new Vector2(collider1.x, ground.y)) < (radius1/2)+(size/2);
         }
 
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawWireCube(transform.position, new Vector3(width,height,1));
+            Gizmos.DrawWireSphere(transform.position, transform.localScale.x/2);
         }
+        
     }
 }
