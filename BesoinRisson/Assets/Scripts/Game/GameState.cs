@@ -43,8 +43,8 @@ namespace PlayerRefacto
         [SerializeField] private float gravity = -9.81f;
         [SerializeField] private float velocity;
 
-        private Player p1;
-        private Player p2;
+        public Player p1;
+        public Player p2;
         
 
         public List<InputAction> CheckInputsPossible(Player self, Player opponent)
@@ -164,7 +164,27 @@ namespace PlayerRefacto
         {
             return Vector2.Distance(collider1, collider2) < (radius1/2)+(radius2/2);
         }
+        //decoy
+        
+        public GameState(GameState gs){}
+
+        public bool HasWon()
+        {
+            return p2.hasWon;
+        }
+
+        public bool IsFinished()
+        {
+            return p1.hasWon || p2.hasWon;
+        }
+
+        public GameState PlayAction(InputAction action)
+        {
+            return null;
+        }
+        
     }
+    
     
     
 }
