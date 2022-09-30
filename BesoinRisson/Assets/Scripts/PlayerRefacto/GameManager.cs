@@ -321,11 +321,9 @@ namespace PlayerRefacto
         {
             if (state.p1.pos.x > 18 || !state.p2.isAlive)
             {
-                Debug.LogError("P1 WON");
                 state.p1.hasWon = true;
             } else if (state.p2.pos.x < -18 || !state.p1.isAlive)
             {
-                Debug.LogError("P2 WON");
                 state.p2.hasWon = true;
             }
         }
