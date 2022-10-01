@@ -7,7 +7,12 @@ namespace PlayerRefacto
 {
     public class GameManager : MonoBehaviour
     {
-        // ici c'est la logique de jeu, tu lui passes un gamestate et un input
+        /*
+         * Cette classe aurait du etre un singleton ou l'on aurais pu recuperer
+         * son instance pour faire des appels dessus voire meme faire une classe
+         * statique, mais ce ne sonnes pas comme une super idee
+         */
+        
         private PlayerInputs _inputProvider;
         private PlayerInputs1 _inputProvider1;
         public GameState state;
@@ -43,11 +48,12 @@ namespace PlayerRefacto
         
         private void FixedUpdate()
         {
+            // Pour le JcJ
             ReadInput();
-
+            //Ici on geres les entrées due notre agent
             MyUpdate(state);
             
-            //Apply gamestate to the graphic engine
+            // On utilise le gamestate pour appliquer les changements a l'ecran
             player1.transform.position = state.p1.pos;
             player2.transform.position = state.p2.pos;
             player1.transform.Find("Sprite").transform.rotation = Quaternion.Euler(0, state.p1.isRight ? 0 : 180, 0);
@@ -77,10 +83,11 @@ namespace PlayerRefacto
             }
         }
 
-        public void MyUpdate(GameState objState, float tickRate = 0.016f)
+        public GameState MyUpdate(GameState objState, InputAction inputAction = InputAction.Idle, float tickRate = 0.016f)
         {
             //Read player and bot moves
-            ReadInput();
+            if(inputAction != InputAction.Idle)
+                ReadInput(inputAction);
             objState.p1 = SimulatePhysics(objState.p1, tickRate);
             objState.p2 = SimulatePhysics(objState.p2, tickRate);
             objState.p1 = SimulatePhysics(objState.p1, tickRate);
@@ -90,16 +97,18 @@ namespace PlayerRefacto
             objState.p1 = SwordStab(objState.p1, tickRate);
             objState.p2 = SwordStab(objState.p2, tickRate);
             objState.timer -= tickRate;
+
+            return objState;
         }
 
         private GameState.Player SimulatePhysics(GameState.Player player, float tickRate = 0.016f)
         {
             if (CheckGround(player.pos, 1f, new Vector2(0, -0.5f), 1f) && player.velocity.y < 0)
             {
+                //ici on s'assure de ne pas passer sous le sol
                 player.velocity.y = 0;
                 player.pos.y = 0.5f;
                 player.isGrounded = true;
-                
             }
             else
             {

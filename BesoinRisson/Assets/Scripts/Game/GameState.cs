@@ -6,7 +6,8 @@ namespace PlayerRefacto
 {
     public class GameState
     {
-        public float simTickRate = 0.016f; //(0.16f = 60 fps), remplaces Time.deltaTime
+        public float simTickRate = 0.002f; //(0.16f = 60 fps), remplaces Time.deltaTime pour la simulation
+        public GameManager gameManager;
         public enum SwordPos
         {
             Top,
@@ -24,7 +25,6 @@ namespace PlayerRefacto
             public float cooldown;
             public bool isGrounded;
             public bool isRight;
-            public bool isIdle;
             public bool isAttacking;
             public bool isAlive;
             public bool hasWon;
@@ -98,10 +98,9 @@ namespace PlayerRefacto
             return p2.hasWon;
         }
         
-        //decoy
         public GameState PlayAction(InputAction input)
         {
-            return null;
+            return gameManager.MyUpdate(this, input, simTickRate);
         }
     }
 }

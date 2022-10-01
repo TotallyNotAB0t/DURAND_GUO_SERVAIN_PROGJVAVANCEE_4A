@@ -15,9 +15,9 @@ public class RandomAgent : MonoBehaviour
             return;
         }
         
+        //C'est caca mais l'agent random utilise le game manager comme il ne fait pas de predictions de jeu
         var possibleInput =
             GameManagerScript.state.CheckInputsPossible(GameManagerScript.state.p2, GameManagerScript.state.p1);
         GameManagerScript.ReadInput(possibleInput[Random.Range(0, possibleInput.Count)]);
     }
-
 }
